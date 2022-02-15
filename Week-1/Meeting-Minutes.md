@@ -9,5 +9,5 @@ We had overall 2 meetings in this week<br>
 >15th Feb, 08:00 PM to 11:00 PM
 >> Attendees: Pavan(347), Varun(336), Bhargav(313), Deepti(317), Gopi(359)<br>
 >> * First we had completed User stories
->> * Using it as a base we drew Use-case diagram
+>> * Using it as a base we drew Use-case diagram 
 >> * At last we made the  ER diagram(Draft)
