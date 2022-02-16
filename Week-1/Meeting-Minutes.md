@@ -3,7 +3,7 @@
 We had overall 2 meetings in this week<br>
 > **Date :** Sunday, 13th Feb,2022<br>
 > **Time :** 03:20 PM<br>
-> **Location :** Discord<br>
+> **Location :** Teams<br>
 > <br>
 > **Meeting Created By :** Sai Pavan Krishna<br>
 > **Type of Meeting :** Project Discussion<br>
@@ -24,7 +24,7 @@ We had overall 2 meetings in this week<br>
 
 > **Date :** Tuesday, 15th Feb,2022<br>
 > **Time :** 08:00 PM<br>
-> **Location :** Discord<br>
+> **Location :** Teams<br>
 > <br>
 > **Meeting Created By :** Sai Pavan Krishna<br>
 > **Type of Meeting :** Project Discussion<br>
