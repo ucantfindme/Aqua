@@ -39,4 +39,4 @@ We had 2 meetings in total<br>
 >> * We finalized the functions and tables.
 >> * We used lucid chart to create class diagram.
 >
-> **Status :** Incomplete<br>
+> **Status :** Completed<br>
