@@ -1,6 +1,6 @@
 # Week-2 Meeting Minutes
 
-We had 3 meetings in total<br>
+We had 4 meetings in total<br>
 > **Date :** Sunday, 27th Feb,2022<br>
 > **Time :** 06:00 PM<br>
 > **Location :** Teams<br>
@@ -12,7 +12,7 @@ We had 3 meetings in total<br>
 >> Pavan(347), Varun(336), Bhargav(313), Deepti(317), Gopi(359)<br>
 >
 > **Agenda :** Update Use-Case Diagram <br>
-> **Time Alocated :** 60 min<br>
+> **Time Allocated :** 60 min<br>
 > **Platform :** Teams<br>
 > **Discussion :**<br>
 >> * We had simplified the use case diagram.
@@ -33,7 +33,7 @@ We had 3 meetings in total<br>
 >> Pavan(347), Varun(336), Bhargav(313), Deepti(317), Gopi(359)<br>
 >
 > **Agenda :** Class Diagram (base) <br>
-> **Time Alocated :** 150 min<br>
+> **Time Allocated :** 150 min<br>
 > **Platform :** Teams<br>
 > **Discussion :**<br>
 >> * We finalized the functions and tables.
@@ -53,9 +53,29 @@ We had 3 meetings in total<br>
 >> Pavan(347), Varun(336), Bhargav(313), Gopi(359)<br>
 >
 > **Agenda :** Class Diagram <br>
-> **Time Alocated :** 60 min<br>
+> **Time Allocated :** 60 min<br>
 > **Platform :** Offline<br>
 > **Discussion :**<br>
 >> * We used lucid chart to create class diagram.
+>
+> **Status :** Completed<br>
+
+<p>&nbsp;</p>
+
+> **Date :** Tuesday, 15th Mar,2022<br>
+> **Time :** 08:30 PM<br>
+> **Location :** Teams<br>
+> <br>
+> **Meeting Created By :** M Varun<br>
+> **Type of Meeting :** Project Discussion<br>
+> <br>
+> **Attendees :** 
+>> Pavan(347), Varun(336), Bhargav(313), Deepti(317), Gopi(359)<br>
+>
+> **Agenda :** Update Class Diagram <br>
+> **Time Allocated :** 60 min<br>
+> **Platform :** Teams<br>
+> **Discussion :**<br>
+>> * We had simplified the class diagram.
 >
 > **Status :** Completed<br>
