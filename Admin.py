@@ -1,4 +1,4 @@
-from .Person import Person
+from Person import Person
 class Admin(Person):
     def __init__(self,name,dob,ph,email,adminId,pas):
         super().__init__(name,dob,ph,email)
