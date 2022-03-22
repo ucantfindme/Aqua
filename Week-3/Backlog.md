@@ -1,1 +1,6 @@
 # Backlog summary for week-3
+|**Question**|**Varun(336)**|**Sai Pavan(347)**|**Gopikrishna(359)**|**Deepti(317))**|**Bhargav(313)**|
+|---|---|---|---|
+|What did you this week?|Familiarised with tkinter, Implemented Welcome and Login GUI page|Github familiarisation, Created and Assigned Issues to members,Database Linking on Authentication and Update functionalities|Created Classes with inheritance, implemented login functionality| Created Classes and implemented updatePassword Functionality|created classes and implemented schedule meetings with DB Linking|
+|What will you work on next week?|Working on other GUI pages and Functionality Linking|Database and GUI Linking of implemented Functionalities and new functionalities of Admin|View Meetings and Attendance functionalities|DB Linking to profile page and profile update functionality|File upload and attendance handling|
+|Do you have any obstacles?|Unfamiliar and dealing with decapriated functions on tkinter|VSCode <-> Github connection|Difference in Inheritance concept between py2 and py3|DB Linking Errors|Network Issues and slow response of VSCode|
