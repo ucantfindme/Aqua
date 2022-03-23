@@ -6,7 +6,7 @@ class Person:
         self.ph=ph
         self.email=email
     def login(self,userid,password):
-        pass
+        userid=int(input())
     def forgotPassword(self,userid,otp):
         pass
     def updateDetails(self,name,dob,ph,email):

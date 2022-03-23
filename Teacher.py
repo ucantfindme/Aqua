@@ -1,4 +1,6 @@
 from Person import Person
+from Course import Course
+from Meeting import Meeting
 class Teacher(Person):
     def __init__(self,name,dob,ph,email,teacherId,department,courses_taught,password):
         super().__init__(name,dob,ph,email)

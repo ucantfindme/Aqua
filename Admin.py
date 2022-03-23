@@ -1,4 +1,7 @@
 from Person import Person
+from Class import Class 
+from Student import Student
+from Teacher import Teacher
 class Admin(Person):
     def __init__(self,name,dob,ph,email,adminId,pas):
         super().__init__(name,dob,ph,email)

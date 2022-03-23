@@ -1,8 +1,10 @@
-class  Course:
-	def __init__(self,CourseId,Title,Pre-requisites,ClassEnrolled,FacultyAssigned,LecturesAll):
+from Student import Student
+from Meeting import Meeting
+class Course:
+	def __init__(self,CourseId,Title,Prerequisites,ClassEnrolled,FacultyAssigned,LectureAll):
 		self.CourseId=CourseId
 		self.Title=Title
-		self.Pre-requisites=Pre-requisites
+		self.Prerequisites=Prerequisites
 		self.ClassEnrolled=ClassEnrolled
 		self.FacultyAssigned=FacultyAssigned
 		self.LectureAll=LectureAll

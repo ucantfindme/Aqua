@@ -1,3 +1,4 @@
+from Student import Student
 class Meeting:
     def __init__(self,
                  meeting_id,
