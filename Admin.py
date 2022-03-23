@@ -7,10 +7,6 @@ class Admin(Person):
         super().__init__(name,dob,ph,email)
         self.adminId=adminId
         self.pas=pas
-    def __init__(self,name,dob,ph,email,adminId,pas):
-        super().__init__(name,dob,ph,email)
-        self.adminId=adminId
-        self.pas=pas
         
     def createStudent(self,name,dob,ph,email,studentid,batch,password):
         stu=Student(name,dob,ph,email,studentid,batch,password)
