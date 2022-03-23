@@ -13,3 +13,8 @@
 > * Admin
 > * Teachers
 > * Students
+# Functionalities/Features
+> * Authentication of users
+> * Read and analyse Teams Attendance Report
+> * Create or update Attendance Records
+> * Generate attendance report
