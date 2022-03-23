@@ -1,7 +1,7 @@
 # Week-3 Meeting Minutes
 
 We had 3 meetings in total<br>
-> **Date :** Wednesday, 16th Feb,2022<br>
+> **Date :** Wednesday, 16th Mar,2022<br>
 > **Time :** 03:00 PM<br>
 > **Location :** Class<br>
 > <br>
@@ -22,7 +22,7 @@ We had 3 meetings in total<br>
 
 <p>&nbsp;</p>
 
-> **Date :** Saturday, 19th Feb,2022<br>
+> **Date :** Saturday, 19th Mar,2022<br>
 > **Time :** 02:00 PM<br>
 > **Location :** Class<br>
 > <br>
@@ -43,7 +43,7 @@ We had 3 meetings in total<br>
 
 <p>&nbsp;</p>
 
-> **Date :** Sunday, 20th Feb,2022<br>
+> **Date :** Sunday, 20th Mar,2022<br>
 > **Time :** 02:30 PM<br>
 > **Location :** Class<br>
 > <br>
