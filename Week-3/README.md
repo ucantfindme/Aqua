@@ -1,13 +1,65 @@
-# Week-3 
-> Meeting minutes<br>
-> Backlog<br>
-> Class Diagram Version - 2<br>
-> Started Coding phase<br>
->> GUI Welcome,Login Page<br>
->> Created Skeleton Classes based on Class Diagram<br>
->> Implemented few basic functionalites<br>
->> <br>
+# Week-3 Meeting Minutes
 
-![image](https://user-images.githubusercontent.com/56352363/159613564-735fceb2-31ff-4b24-84a7-628c2e4156cc.png)<br>
+We had 3 meetings in total<br>
+> **Date :** Wednesday, 16th Mar,2022<br>
+> **Time :** 03:00 PM<br>
+> **Location :** Class<br>
+> <br>
+> **Meeting Created By :** M Varun<br>
+> **Type of Meeting :** GUI familiarisation<br>
+> <br>
+> **Attendees :** 
+>> Pavan(347), Varun(336), Bhargav(313), Deepti(317), Gopi(359)<br>
+>
+> **Agenda :** GUI basic design <br>
+> **Time Allocated :** 60 min<br>
+> **Platform :** Offline<br>
+> **Discussion :**<br>
+>> * GUI Welcome and login page design.
+>> * Tkinter installation and usage<br>
+>
+> **Status :** Completed<br>
 
-![image](https://user-images.githubusercontent.com/56352363/159613701-349413ec-14fe-4b1d-bf1e-fa663164faab.png)
+<p>&nbsp;</p>
+
+> **Date :** Saturday, 19th Mar,2022<br>
+> **Time :** 02:00 PM<br>
+> **Location :** Class<br>
+> <br>
+> **Meeting Created By :** N Sai Pavan<br>
+> **Type of Meeting :** Github familiarisation<br>
+> <br>
+> **Attendees :** 
+>> Pavan(347), Varun(336), Bhargav(313), Deepti(317), Gopi(359)<br>
+>
+> **Agenda :** Github <br>
+> **Time Allocated :** 60 min<br>
+> **Platform :** Offline<br>
+> **Discussion :**<br>
+>> * Cloning github in vscode
+>> * Commiting changes, contributing from vscode<br>
+>
+> **Status :** Completed<br>
+
+<p>&nbsp;</p>
+
+> **Date :** Sunday, 20th Mar,2022<br>
+> **Time :** 02:30 PM<br>
+> **Location :** Class<br>
+> <br>
+> **Meeting Created By :** M Varun<br>
+> <br>
+> **Attendees :** 
+>> Pavan(347), Varun(336), Bhargav(313), Deepti(317), Gopi(359)<br>
+>
+> **Agenda :** Creating Issues and assigning members to work<br>
+> **Time Allocated :** 150 min<br>
+> **Platform :** Offline<br>
+> **Discussion :**<br>
+>> * Identified various tasks to be done
+>> * Creating new issues on Repo.
+>> * Assigning members to issues.<br>
+>
+> **Status :** Completed<br>
+
+<p>&nbsp;</p>
