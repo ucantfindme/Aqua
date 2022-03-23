@@ -5,3 +5,6 @@
 > Bhargav Ram - AM.EN.U4CSE19313<br>
 > Deepti Hada - AM.EN.U4CSE19317<br>
 > Vasantha Gopikrishna - AM.EN.U4CSE19359<br>
+#Motivation 
+> Attendance collected in online classes is either baised or inaccurate and to record the attendance fromthe attendance report generated from online platforms is a time taking process .
+  
