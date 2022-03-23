@@ -7,7 +7,10 @@ class Class:
 		self.Student=Student
 		self.CourseEnrolled=CourseEnrolled
 	def addStudent(self,student):
-		pass
+		self.Student.append(student)
+		#update this on DB
+		return
 	def enrollCourse(self,course):
-		pass	
+		self.CourseEnrolled.append(course)
+		#update this on DB
 		 	
