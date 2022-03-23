@@ -18,3 +18,8 @@
 > * Read and analyse Teams Attendance Report
 > * Create or update Attendance Records
 > * Generate attendance report
+# Languages and Tools
+> * Programming Languages-Python
+> * SQL-PostgreSQL 
+> * GUI-Tkinter
+> * Drawing Tools-Draw.io
