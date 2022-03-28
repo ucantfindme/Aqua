@@ -20,6 +20,6 @@
 > * Generate attendance report
 # Languages and Tools
 > * Programming Languages-Python
-> * SQL-PostgreSQL 
+> * SQL-SQLite
 > * GUI-Tkinter
 > * Drawing Tools-Draw.io
