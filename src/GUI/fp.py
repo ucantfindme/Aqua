@@ -10,7 +10,7 @@ from tkinter import filedialog
 from GUI.student import student
 from GUI.teacher import teacher
 from GUI.admin import admin
-from Classes.Welcome import login as logfun, forgotPassword as forpass, logout as lgo
+from Classes.Welcome import login as logfun, forgotPassword as forpass, logout as lgo, updatepass as up
 
 
 class f():
