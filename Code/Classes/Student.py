@@ -1,11 +1,9 @@
 from Person import Person
 from Course import Course
 class Student(Person):
-    def __init__(self,name,dob,ph,email,studentid,batch,password):
-        super().__init__(name,dob,ph,email)
-        self.studentid=studentid
+    def __init__(self,studentid,name,dob,ph,email,batch,type):
+        super().__init__(studentid,name,dob,ph,email,type)
         self.batch=batch
-        self.password=password
     def viewCalendar(self):
         pass
     def getAttendance(self,course):
@@ -13,4 +11,5 @@ class Student(Person):
     def viewRegisteredCourses(self):
         pass
     def viewProfile(self):
+        #open up profile gui for student
         pass
