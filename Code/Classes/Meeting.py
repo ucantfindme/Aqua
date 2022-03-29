@@ -1,14 +1,6 @@
-from Student import Student
+import Classes.Student
 class Meeting:
-    def __init__(self,
-                 meeting_id,
-                 title,
-                 conducted_by,
-                 course,
-                 date,
-                 start_time,
-                 duration,
-                 attendance_report):
+    def __init__(self,meeting_id,title,conducted_by,course,date,start_time,duration,attendance_report):
         self.meeting_id=meeting_id
         self.title=title
         self.conducted_by=conducted_by

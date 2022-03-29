@@ -24,6 +24,6 @@ class Person:
         conn.commit()
         conn.close()
 
-p=Person("NaSaPaKri","Sai","12-06-1900",12345,"def@gmail.com",'S')
+"""p=Person("NaSaPaKri","Sai","12-06-1900",12345,"def@gmail.com",'S')
 p.updateDetails("Sai","12-06-1990",12345,"def@gmail.com")
-p.updatePassword("mikupappa")
+p.updatePassword("mikupappa")"""

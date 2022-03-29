@@ -1,4 +1,7 @@
 import sqlite3
+from Classes.Admin import Admin
+from Classes.Student import Student
+from Classes.Teacher import Teacher
 def login(userid,password):
     #edit the path of folder DB accordingly
     conn = sqlite3.connect('/Users/nspk/Desktop/Aqua/Code/DB/login.db')
@@ -46,10 +49,11 @@ def forgotPassword(userid,otp):
 def logout():
     #return to default window with no user logged in
     pass
-login("Admin347","marinpappa")
+"""login("Admin347","marinpappa")
 login("NaSaPaKri","mikupappa")
 login("NSPKrishna","Maipappa")
 login("NSPKrishna","maipappa")
 forgotPassword("NSPKrishna",19347)
 login("NSPKrishna","Maipappa")
-login("NSPKrishna","maipappa")
+login("NSPKrishna","maipappa")"""
+p=Admin("go","1212",56666,"vasa",101,"ss")
