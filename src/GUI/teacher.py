@@ -34,7 +34,7 @@ class teacher():
         f1 = Frame(h,width=190,height=680,bg='orange')
         f1.place(x=10,y=10)
         # Home button
-        hom = Button(f1,text="Home",bg='orange',relief='flat',underline=0,command=lambda:teacher().refresh(h),font=('roboto',12,'bold'))
+        hom = Button(f1,text="Home",bg='orange',relief='flat',underline=0,command=lambda:self.refresh(h),font=('roboto',12,'bold'))
         hom.place(x=90,y=40)
         # Login button
         log = Button(f1,text="Login",bg='orange',relief='flat',underline=0,font=('roboto',12,'bold'))

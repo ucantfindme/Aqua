@@ -36,7 +36,7 @@ class welcome():
         f1 = Frame(h,width=190,height=680,bg='orange')
         f1.place(x=10,y=10)
         # Home button
-        hom = Button(f1,text="Home",bg='orange',relief='flat',underline=0,command=welcome().home,font=('roboto',12,'bold'))
+        hom = Button(f1,text="Home",bg='orange',relief='flat',underline=0,command=lambda:self.refresh(h),font=('roboto',12,'bold'))
         hom.place(x=90,y=40)
         # Login button
         log = Button(f1,text="Login",bg='orange',relief='flat',underline=0,command=lambda:l().login(h),font=('roboto',12,'bold'))
@@ -45,7 +45,7 @@ class welcome():
         reg = Button(f1,text="Register",bg='orange',relief='flat',underline=0,command=lambda:r().register(h),font=('roboto',12,'bold'))
         reg.place(x=90,y=380)
         #close button
-        cls = Button(f1,text="Close",bg='orange',relief='flat',underline=0,command=lambda:welcome().refresh(h),font=('roboto',12,'bold'))
+        cls = Button(f1,text="Close",bg='orange',relief='flat',underline=0,command=lambda:h.destroy(),font=('roboto',12,'bold'))
         cls.place(x=90,y=500)
         
         # Frame 2

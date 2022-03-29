@@ -26,6 +26,7 @@ class l():
         log.minsize(400,350)
         log.title("Login")
         log.configure(background='purple')
+        
         def log_submit():
             name=e1.get()
             password=e2.get()
