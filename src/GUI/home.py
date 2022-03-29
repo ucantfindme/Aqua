@@ -52,7 +52,7 @@ class welcome():
         f2 = Frame(h,width=980,height=130,bg='lightyellow')
         f2.place(x=210,y=10)
         # Heading label
-        l2 = Label(f2,text="Welcome to AMS",bg='lightyellow',font=('roboto',50,'bold'))
+        l2 = Label(f2,text="Welcome to AMS",fg='black',bg='lightyellow',font=('roboto',50,'bold'))
         l2.place(x=220,y=35)
         
         #image
