@@ -1,4 +1,5 @@
-# Impoting tkinter
+# Impoting tkinter4
+import sys
 from tkinter import *
 import tkinter as tk
 from tkinter.scrolledtext import ScrolledText
@@ -7,12 +8,131 @@ import random
 from datetime import datetime
 from tkinter import filedialog
 
+
+# Login Submit function  
+def log_submit(log,name_var,passw_var):
+    name=name_var.get()
+    password=passw_var.get()
+    name_var.set("")
+    passw_var.set("")
+    if False:
+        log.destroy()
+        home()
+    else:
+        messagebox.showerror("Error", "PLease enter a valid Username or Password")
+    pass
+
+# Forgot Password Submit function  
+def fp_submit(fp,name_var,pin_var):
+    name=name_var.get()
+    pin=pin_var.get()
+    name_var.set("")
+    pin_var.set("")
+    if False:
+        fp.destroy()
+        home()
+    else:
+        messagebox.showerror("Error", "PLease enter a valid Username and Pin")
+    pass
+
+#Forgot password
+def fp(log):
+    log.destroy()
+    fp=Tk()
+    fp.geometry("300x350+580+210")
+    fp.maxsize(400,350)
+    fp.minsize(400,350)
+    fp.title("Login")
+    fp.configure(background='purple')
+
+    # Frame 1
+    f1 = Frame(fp,width=400,height=100,bg='purple')
+    f1.place(x=0,y=0)
+    # Label 1
+    l1 = Label(f1,text="Login to AMS",bg='purple',fg='black',font=('verdana',30,'bold'))
+    l1.place(x=45,y=30)
+    
+    # Frame 2
+    f2 = Frame(fp,width=400,height=300,bg='purple')
+    f2.place(x=20,y=140)
+    # Label 2 - Email
+    l2 = Label(f2,text="E-mail or Id:",bg='purple', font=('roboto',15,'bold'))
+    l2.grid(row = 1, column = 0, pady = 10,padx=15) 
+    # Label 3 - Pin
+    l3 = Label(f2,text="Pin:",bg='purple', font=('roboto',15,'bold'))
+    l3.grid(row = 2, column = 0, pady = 10,padx=15)
+ 
+    name_var=tk.StringVar()
+    pin_var=tk.StringVar()
+    # Entry 1 - Email
+    e1 = Entry(f2,textvariable=name_var,font=('roboto',12,'normal'))
+    e1.grid(row = 1, column = 1, pady = 10) 
+    # Entry 2 - Pin 
+    e2 = Entry(f2,textvariable=pin_var, font=('roboto',12,'normal')) 
+    e2.grid(row = 2, column = 1, pady = 10) 
+
+    # Submit button
+    sub = Button(f2,text="Submit",bg='orange',command=lambda:fp_submit(fp,name_var,pin_var),font=('roboto',12,'bold'))
+    sub.grid(column=1,row=3,pady="3")
+    fp.mainloop()
+
+# Login function
+def login(h):
+    # Login
+    h.destroy()
+    log=Tk()
+    log.geometry("300x350+580+210")
+    log.maxsize(400,350)
+    log.minsize(400,350)
+    log.title("Login")
+    log.configure(background='purple')
+
+    # Frame 1
+    f1 = Frame(log,width=400,height=100,bg='purple')
+    f1.place(x=0,y=0)
+    # Label 1
+    l1 = Label(f1,text="Login to AMS",bg='purple',fg='black',font=('verdana',30,'bold'))
+    l1.place(x=45,y=30)
+    
+    # Frame 2
+    f2 = Frame(log,width=400,height=300,bg='purple')
+    f2.place(x=20,y=140)
+    # Label 2 - Email
+    l2 = Label(f2,text="E-mail or Id:",bg='purple', font=('roboto',15,'bold'))
+    l2.grid(row = 1, column = 0, pady = 10,padx=15) 
+    # Label 3 - Password
+    l3 = Label(f2,text="Password:",bg='purple', font=('roboto',15,'bold'))
+    l3.grid(row = 2, column = 0, pady = 10,padx=15)
+ 
+    name_var=tk.StringVar()
+    passw_var=tk.StringVar()
+    # Entry 1 - Email
+    e1 = Entry(f2,textvariable=name_var,font=('roboto',12,'normal'))
+    e1.grid(row = 1, column = 1, pady = 10) 
+    # Entry 2 - Password 
+    e2 = Entry(f2,textvariable=passw_var, show="*",font=('roboto',12,'normal')) 
+    e2.grid(row = 2, column = 1, pady = 10) 
+
+    # Submit button
+    sub = Button(f2,text="Submit",bg='orange',command=lambda:log_submit(log,name_var,passw_var),font=('roboto',12,'bold'))
+    sub.grid(column=1,row=3,pady="3")
+
+    
+    l4 = Button(f2,text="Forgot Password?",bg='purple',relief='flat',command=lambda:fp(log), font=('roboto',12,'bold'))
+    l4.grid(row = 4, column = 1, pady = 10,padx=15)
+    log.mainloop()
+
+# Register function
+def register(h):
+    pass
+
 # welcome frame
 def home():
     # home
+    h=Tk()
     h.title("AMS")
     h.configure(background='purple')
-    h.geometry("1200x700")
+    h.geometry("1200x700+170+80")
     h.maxsize(1200,700)
     h.minsize(1200,700)
     
@@ -23,10 +143,10 @@ def home():
     hom = Button(f1,text="Home",bg='orange',relief='flat',underline=0,command=home,font=('roboto',12,'bold'))
     hom.place(x=90,y=40)
     # Login button
-    log = Button(f1,text="Login",bg='orange',relief='flat',underline=0,command=login,font=('roboto',12,'bold'))
+    log = Button(f1,text="Login",bg='orange',relief='flat',underline=0,command=lambda:login(h),font=('roboto',12,'bold'))
     log.place(x=90,y=340)
     # Registration button
-    reg = Button(f1,text="Register",bg='orange',relief='flat',underline=0,command=register,font=('roboto',12,'bold'))
+    reg = Button(f1,text="Register",bg='orange',relief='flat',underline=0,command=lambda:register(h),font=('roboto',12,'bold'))
     reg.place(x=90,y=380)
     #close button
     cls = Button(f1,text="Close",bg='orange',relief='flat',underline=0,command=h.destroy,font=('roboto',12,'bold'))
@@ -42,63 +162,16 @@ def home():
     # Frame 3
     f3 = Frame(h,width=980,height=530,bg='lightblue')
     f3.place(x=210,y=160)
+    h.mainloop()
 
-# Submit function  
-def submit():
-    """
-    name=name_var.get()
-    password=passw_var.get()
-    name_var.set("")
-    passw_var.set("")
-    welcome.destroy()
-    home()
-    """
+def teacher():
     pass
 
-# Login function
-def login():
-    # Login
-    welcome=Tk()
-    welcome.geometry("300x350")
-    welcome.maxsize(400,350)
-    welcome.minsize(400,350)
-    welcome.title("Login")
-    welcome.configure(background='purple')
+def student():
+    pass
 
-    # Frame 1
-    f1 = Frame(welcome,width=400,height=100,bg='purple')
-    f1.place(x=0,y=0)
-    # Label 1
-    l1 = Label(f1,text="Login to AMS",bg='purple',fg='black',font=('verdana',30,'bold'))
-    l1.place(x=45,y=30)
-    
-    # Frame 2
-    f2 = Frame(welcome,width=400,height=300,bg='purple')
-    f2.place(x=20,y=140)
-    # Label 2 - Email
-    l2 = Label(f2,text="E-mail or Id:",bg='purple', font=('roboto',15,'bold'))
-    l2.grid(row = 1, column = 0, pady = 10,padx=15) 
-    # Label 3 - Password
-    l3 = Label(f2,text="Password:",bg='purple', font=('roboto',15,'bold'))
-    l3.grid(row = 2, column = 0, pady = 10,padx=15)
-
-    # Entry 1 - Email
-    e1 = Entry(f2,textvariable=name_var,font=('roboto',12,'normal'))
-    e1.grid(row = 1, column = 1, pady = 10) 
-    # Entry 2 - Password 
-    e2 = Entry(f2,textvariable=passw_var, show="*",font=('roboto',12,'normal')) 
-    e2.grid(row = 2, column = 1, pady = 10) 
-    # Submit button
-    sub = Button(f2,text="Submit",bg='orange',command=welcome.destroy,font=('roboto',12,'bold'))
-    sub.grid(column=1,row=3,pady="3")
-    welcome.mainloop()
-
-# Register function
-def register():
+def admin():
     pass
 
 if __name__ == "__main__":
-    h=Tk()
-    name_var=tk.StringVar()
-    passw_var=tk.StringVar()
     home()
