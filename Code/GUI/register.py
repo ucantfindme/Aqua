@@ -7,7 +7,10 @@ from tkinter import messagebox
 import random
 from datetime import datetime
 from tkinter import filedialog
-from home import welcome
 
-if __name__ == "__main__":
-    welcome().home()
+class r():
+    def __init__(self):
+        pass
+    # Register function
+    def register(self,h):
+        pass

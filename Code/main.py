@@ -24,7 +24,7 @@ def login(userid,password):
         print("Welcome Teacher,",data[0])
         #Open Teacher Window
     #return respective object
-    return True 
+    return data[2] 
 def forgotPassword(userid,otp):
     if otp!=19347:
         #pop-up wrong otp dialogue box
