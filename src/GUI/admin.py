@@ -60,15 +60,9 @@ class admin():
         create.menu.add_command(label="Course")
         create.place(x=85,y=380)
 
-<<<<<<< HEAD
         #close button
         cls = Button(f1,text="Logout",bg='orange',relief='flat',underline=0,command=lambda:lgo(h),font=('roboto',15,'bold'))
         cls.place(x=85,y=500)
-=======
-        #Close button
-        cls = Button(f1,text="Logout",bg='orange',relief='flat',underline=0,command=lambda:lgo(h),font=('roboto',12,'bold'))
-        cls.place(x=90,y=500)
->>>>>>> 843de92ce5514d4daa8c1b647d19595691843192
         
         # Frame 2
         f2 = Frame(h,width=980,height=130,bg='lightyellow')

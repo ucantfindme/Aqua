@@ -10,13 +10,8 @@ from tkinter import filedialog
 from GUI.student import student
 from GUI.teacher import teacher
 from GUI.admin import admin
-<<<<<<< HEAD
-from Classes.Welcome import login as logfun, forgotPassword as forpass, logout as lgo,updatepass as up
-#from ...Code.main import forgotPassword
-=======
 from Classes.Welcome import login as logfun, forgotPassword as forpass, logout as lgo
 
->>>>>>> 843de92ce5514d4daa8c1b647d19595691843192
 
 class f():
     def __init__(self):
