@@ -1,13 +1,12 @@
-from Person import Person
-from Course import Course
-from Meeting import Meeting
-class Teacher(Person):
-    def __init__(self,name,dob,ph,email,teacherId,department,courses_taught,password):
-        super().__init__(name,dob,ph,email)
-        self.teacherId=teacherId
-        self.department=department
-        self.courses_taught=courses_taught
-        self.password=password
+#import Classes.Person
+import Classes.Course
+import Classes.Meeting
+from Classes import Person
+class Teacher(Person.Person):
+    def __init__(self,userid,name,dob,ph,email,type,dept,cou_tau):
+        super().__init__(userid,name,dob,ph,email,type)
+        self.department=dept
+        self.courses_taught=cou_tau
     def scheduleMeeting(self,course,date):
         pass
     def uploadAttendance(self,meeting):

@@ -1,5 +1,5 @@
-from Student import Student
-from Meeting import Meeting
+import Classes.Student
+import Classes.Meeting
 class Course:
 	def __init__(self,CourseId,Title,Prerequisites,ClassEnrolled,FacultyAssigned,LectureAll):
 		self.CourseId=CourseId

@@ -1,8 +1,9 @@
-from Person import Person
-from Course import Course
-class Student(Person):
-    def __init__(self,studentid,name,dob,ph,email,batch,type):
-        super().__init__(studentid,name,dob,ph,email,type)
+import Classes.Person
+import Classes.Course
+from Classes import Person
+class Student(Person.Person):
+    def __init__(self,userid,name,dob,ph,email,type,batch):
+        super().__init__(userid,name,dob,ph,email,type)
         self.batch=batch
     def viewCalendar(self):
         pass
