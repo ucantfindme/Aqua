@@ -21,8 +21,8 @@ class admin():
         h.destroy()
         admin().home()
         pass
-
-    # welcome frame
+    #Welcome Home
+    #Home window
     def home(self):
         # home
         h=Tk()
@@ -60,7 +60,7 @@ class admin():
         create.menu.add_command(label="Course")
         create.place(x=90,y=380)
 
-        #close button
+        #Close button
         cls = Button(f1,text="Logout",bg='orange',relief='flat',underline=0,command=lambda:lgo(h),font=('roboto',12,'bold'))
         cls.place(x=90,y=500)
         
