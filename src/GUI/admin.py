@@ -1,6 +1,7 @@
 # Impoting tkinter4
 import sys
 from tkinter import *
+from PIL import ImageTk, Image
 import tkinter as tk
 from tkinter.scrolledtext import ScrolledText
 from tkinter import messagebox
@@ -75,4 +76,7 @@ class admin():
         # Frame 3
         f3 = Frame(h,width=980,height=530,bg='lightblue')
         f3.place(x=210,y=160)
+        img = ImageTk.PhotoImage(Image.open(r"C:\Users\Varun Musunuru\Downloads\s6\SE\Aqua\src\GUI\teamAqua.png"))
+        label = tk.Label(f3, image = img)
+        label.place(x=220,y=20)
         h.mainloop()
