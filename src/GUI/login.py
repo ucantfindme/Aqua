@@ -11,6 +11,7 @@ from GUI.fp import f
 from GUI.admin import admin
 from GUI.student import student
 from GUI.teacher import teacher
+from Classes.Welcome import login as logfun, forgotPassword as forpass, logout as lgo
 #from ...Code.main import login
 
 class l():
