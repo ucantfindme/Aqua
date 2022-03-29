@@ -8,8 +8,8 @@ class Admin(Person):
         self.adminId=adminId
         self.pas=pas
         
-    def createStudent(self,name,dob,ph,email,studentid,batch,password):
-        stu=Student(name,dob,ph,email,studentid,batch,password)
+    def createStudent(self,studentid,name,dob,ph,email,batch,password):
+        stu=Student(studentid,name,dob,ph,email,batch,password)
         #update this to DB
         return stu
     
