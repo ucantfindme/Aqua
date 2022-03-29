@@ -12,19 +12,21 @@ from tkinter import filedialog
 from GUI.login import l
 from GUI.register import r
 
+# Welcome class
 class welcome():
     def __init__(self):
         print("")
         pass
 
+# Home func    
     def refresh(self,h):
         h.destroy()
         welcome().home()
         pass
 
-    # welcome frame
+    # Welcome frame
     def home(self):
-        # home
+        # home window
         h=Tk()
         h.title("AMS")
         h.configure(background='purple')
@@ -44,7 +46,7 @@ class welcome():
         # Registration button
         reg = Button(f1,text="Register",bg='orange',relief='flat',underline=0,command=lambda:r().register(h),font=('roboto',12,'bold'))
         reg.place(x=90,y=380)
-        #close button
+        # close button
         cls = Button(f1,text="Close",bg='orange',relief='flat',underline=0,command=lambda:h.destroy(),font=('roboto',12,'bold'))
         cls.place(x=90,y=500)
         
@@ -54,9 +56,7 @@ class welcome():
         # Heading label
         l2 = Label(f2,text="Welcome to AMS",fg='black',bg='lightyellow',font=('roboto',50,'bold'))
         l2.place(x=220,y=35)
-        
-        #image
-        #img = Image.open(r"teamAqua.png")
+       
         # Frame 3
         f3 = Frame(h,width=980,height=530,bg='lightblue')
         f3.place(x=210,y=160)
