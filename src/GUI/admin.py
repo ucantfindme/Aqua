@@ -9,6 +9,7 @@ from tkinter import messagebox
 import random
 from datetime import datetime
 from tkinter import filedialog
+from Classes.Welcome import login as logfun, forgotPassword as forpass, logout as lgo
 #from home import welcome
 
 class admin():
@@ -19,10 +20,6 @@ class admin():
         h.destroy()
         admin().home()
         pass
-
-    def logout(self,h):
-        h.destroy()
-        #welcome().home()
 
     # welcome frame
     def home(self):
@@ -63,7 +60,7 @@ class admin():
         create.place(x=90,y=380)
 
         #close button
-        cls = Button(f1,text="Logout",bg='orange',relief='flat',underline=0,command=lambda:admin().logout(h),font=('roboto',12,'bold'))
+        cls = Button(f1,text="Logout",bg='orange',relief='flat',underline=0,command=lambda:lgo(h),font=('roboto',12,'bold'))
         cls.place(x=90,y=500)
         
         # Frame 2

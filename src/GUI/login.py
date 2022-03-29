@@ -21,9 +21,10 @@ class l():
     def log_submit(self,h,log,name_var,passw_var):
         name=name_var.get()
         password=passw_var.get()
+        print(name,password)
+        s=logfun(name,password)
         name_var.set("")
         passw_var.set("")
-        s='A' #login(name,password)
         if s=='A':
             h.destroy()
             log.destroy()
@@ -75,7 +76,6 @@ class l():
         # Entry 2 - Password 
         e2 = Entry(f2,textvariable=passw_var, show="*",font=('roboto',12,'normal')) 
         e2.grid(row = 2, column = 1, pady = 10) 
-
         # Submit button
         sub = Button(f2,text="Submit",bg='orange',command=lambda:l().log_submit(h,log,name_var,passw_var),font=('roboto',12,'bold'))
         sub.grid(column=1,row=3,pady="3")

@@ -1,5 +1,7 @@
 import sqlite3
 import os
+from tkinter import *
+import tkinter as tk
 
 def login(userid,password):
     #edit the path of folder DB accordingly
@@ -48,7 +50,8 @@ def forgotPassword(userid,otp):
     conn.commit()
     conn.close()
     return True
-def logout():
+def logout(h):
+    h.destroy()
     #return to default window with no user logged in
     pass
 """login("Admin347","marinpappa")
