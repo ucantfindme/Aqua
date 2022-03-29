@@ -34,17 +34,17 @@ class teacher():
         f1 = Frame(h,width=190,height=680,bg='orange')
         f1.place(x=10,y=10)
         # Home button
-        hom = Button(f1,text="Home",bg='orange',relief='flat',underline=0,command=lambda:self.refresh(h),font=('roboto',12,'bold'))
-        hom.place(x=90,y=40)
+        hom = Button(f1,text="Home",bg='orange',relief='flat',underline=0,command=lambda:self.refresh(h),font=('roboto',15,'bold'))
+        hom.place(x=85,y=40)
         # Login button
-        log = Button(f1,text="Login",bg='orange',relief='flat',underline=0,font=('roboto',12,'bold'))
-        log.place(x=90,y=340)
+        log = Button(f1,text="Login",bg='orange',relief='flat',underline=0,font=('roboto',15,'bold'))
+        log.place(x=85,y=340)
         # Registration button
-        reg = Button(f1,text="Register",bg='orange',relief='flat',underline=0,font=('roboto',12,'bold'))
-        reg.place(x=90,y=380)
+        reg = Button(f1,text="Register",bg='orange',relief='flat',underline=0,font=('roboto',15,'bold'))
+        reg.place(x=85,y=380)
         #close button
-        cls = Button(f1,text="Logout",bg='orange',relief='flat',underline=0,command=lambda:lgo(h),font=('roboto',12,'bold'))
-        cls.place(x=90,y=500)
+        cls = Button(f1,text="Logout",bg='orange',relief='flat',underline=0,command=lambda:lgo(h),font=('roboto',15,'bold'))
+        cls.place(x=85,y=500)
         
         # Frame 2
         f2 = Frame(h,width=980,height=130,bg='lightyellow')

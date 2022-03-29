@@ -32,20 +32,19 @@ def login(userid,password):
     #return respective object
     return data[2] 
 def forgotPassword(userid,otp):
-    if otp!=19347:
+    if otp!="19347":
         #pop-up wrong otp dialogue box
         return False
+    return True
+def updatepass(userid,newpass):
     path=os.path.abspath('.')
     conn = sqlite3.connect(path+'/src/DB/login.db')
     cursor = conn.cursor()
     lst=cursor.execute('''SELECT * FROM LOGS WHERE USERNAME=?''',(userid,))
     if not lst:
         #pop-up username doesn't exist
-        return False
-    #prompt a text field dialogue box to take new password
-    newpass=input("Enter new Password:")
+        return False    
     val=cursor.execute('''UPDATE LOGS SET PASS=? WHERE USERNAME=?''',(newpass,userid))
-    #pop-up updated password and redirect to login page when closed
     print("Password Updated")
     conn.commit()
     conn.close()

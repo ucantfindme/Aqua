@@ -36,32 +36,32 @@ class admin():
         f1.place(x=10,y=10)
 
         # Logout button
-        reg = Button(f1,text="Home",bg='orange',relief='flat',underline=0,command=lambda:self.refresh(h),font=('roboto',12,'bold'))
-        reg.place(x=90,y=40)
+        reg = Button(f1,text="Home",bg='orange',relief='flat',underline=0,command=lambda:self.refresh(h),font=('roboto',15,'bold'))
+        reg.place(x=85,y=40)
 
         # View button
-        view = Menubutton(f1,text="View",bg='orange',relief='flat',underline=0,font=('roboto',12,'bold'))
-        view.menu =  Menu ( view, tearoff = 0, bg='lightblue' ,font=('roboto',12,'normal'))
+        view = Menubutton(f1,text="View",bg='orange',relief='flat',underline=0,font=('roboto',15,'bold'))
+        view.menu =  Menu ( view, tearoff = 0, bg='lightblue' ,font=('roboto',13,'normal'))
         view["menu"] =  view.menu
         view.menu.add_command(label="Student registration")
         view.menu.add_command(label="Teacher registration")
         view.menu.add_command(label="Class registration")
         view.menu.add_command(label="Course registration")
-        view.place(x=90,y=340)
+        view.place(x=85,y=340)
 
         # Create button
-        create = Menubutton(f1,text="Create",bg='orange',relief='flat',underline=0,font=('roboto',12,'bold'))
-        create.menu =  Menu ( create, tearoff = 0, bg='lightblue' ,font=('roboto',12,'normal'))
+        create = Menubutton(f1,text="Create",bg='orange',relief='flat',underline=0,font=('roboto',15,'bold'))
+        create.menu =  Menu ( create, tearoff = 0, bg='lightblue' ,font=('roboto',13,'normal'))
         create["menu"] =  create.menu
         create.menu.add_command(label="Student")
         create.menu.add_command(label="Teacher")
         create.menu.add_command(label="Class")
         create.menu.add_command(label="Course")
-        create.place(x=90,y=380)
+        create.place(x=85,y=380)
 
         #close button
-        cls = Button(f1,text="Logout",bg='orange',relief='flat',underline=0,command=lambda:lgo(h),font=('roboto',12,'bold'))
-        cls.place(x=90,y=500)
+        cls = Button(f1,text="Logout",bg='orange',relief='flat',underline=0,command=lambda:lgo(h),font=('roboto',15,'bold'))
+        cls.place(x=85,y=500)
         
         # Frame 2
         f2 = Frame(h,width=980,height=130,bg='lightyellow')
