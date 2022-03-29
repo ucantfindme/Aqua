@@ -7,10 +7,10 @@ from tkinter import messagebox
 import random
 from datetime import datetime
 from tkinter import filedialog
-from fp import f
-from admin import admin
-from student import student
-from teacher import teacher
+from GUI.fp import f
+from GUI.admin import admin
+from GUI.student import student
+from GUI.teacher import teacher
 #from ...Code.main import login
 
 class l():

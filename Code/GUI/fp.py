@@ -7,9 +7,9 @@ from tkinter import messagebox
 import random
 from datetime import datetime
 from tkinter import filedialog
-from student import student
-from teacher import teacher
-from admin import admin
+from GUI.student import student
+from GUI.teacher import teacher
+from GUI.admin import admin
 #from ...Code.main import forgotPassword
 
 class f():

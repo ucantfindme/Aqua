@@ -2,6 +2,7 @@ import sqlite3
 from Classes.Admin import Admin
 from Classes.Student import Student
 from Classes.Teacher import Teacher
+from GUI.home import welcome 
 def login(userid,password):
     #edit the path of folder DB accordingly
     conn = sqlite3.connect('/Users/nspk/Desktop/Aqua/Code/DB/login.db')
@@ -56,4 +57,6 @@ login("NSPKrishna","maipappa")
 forgotPassword("NSPKrishna",19347)
 login("NSPKrishna","Maipappa")
 login("NSPKrishna","maipappa")"""
-p=Admin("go","1212",56666,"vasa",101,"ss")
+#Execution starts from here
+w=welcome()
+w.home()

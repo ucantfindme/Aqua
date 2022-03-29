@@ -9,8 +9,8 @@ from tkinter import messagebox
 import random
 from datetime import datetime
 from tkinter import filedialog
-from login import l
-from register import r
+from GUI.login import l
+from GUI.register import r
 
 class welcome():
     def __init__(self):
@@ -60,7 +60,7 @@ class welcome():
         # Frame 3
         f3 = Frame(h,width=980,height=530,bg='lightblue')
         f3.place(x=210,y=160)
-        img = ImageTk.PhotoImage(Image.open(r"C:\Users\Varun Musunuru\Downloads\s6\SE\Aqua\Code\GUI\teamAqua.png"))
+        img = ImageTk.PhotoImage(Image.open(r"/Users/nspk/Desktop/Aqua/Code/GUI/teamAqua.png"))
         label = tk.Label(f3, image = img)
         label.place(x=220,y=20)
         '''
