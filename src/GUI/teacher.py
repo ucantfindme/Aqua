@@ -60,7 +60,9 @@ class teacher():
         f3 = Frame(h,width=980,height=530,bg='lightblue')
         f3.place(x=210,y=160)
         path=os.path.abspath('.')+"/src/GUI/Aqua.png"
-        img = ImageTk.PhotoImage(Image.open(path))
+        img=Image.open(path)
+        img = img.resize((980, 530), Image. ANTIALIAS)
+        img = ImageTk.PhotoImage(img)
         label = tk.Label(f3, image = img)
-        label.place(x=220,y=20)
+        label.place(x=0,y=0)
         h.mainloop()
