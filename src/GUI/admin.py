@@ -10,11 +10,12 @@ import random
 from datetime import datetime
 from tkinter import filedialog
 from Classes.Welcome import login as logfun, forgotPassword as forpass, logout as lgo
-#from home import welcome
+
 
 class admin():
     def __init__(self):
         pass
+#go back to the home page
 
     def refresh(self,h):
         h.destroy()
