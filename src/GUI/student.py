@@ -12,18 +12,19 @@ from tkinter import filedialog
 from Classes.Welcome import login as logfun, forgotPassword as forpass, logout as lgo
 #from home import welcome
 
+#Student class
 class student():
     def __init__(self):
         pass
-
+# Home func
     def refresh(self,h):
         h.destroy()
         student().home()
         pass
 
-    # welcome frame
+    # Welcome frame
     def home(self):
-        # home
+        # Home window
         h=Tk()
         h.title("AMS Student")
         h.configure(background='purple')
@@ -57,6 +58,7 @@ class student():
         # Frame 3
         f3 = Frame(h,width=980,height=530,bg='lightblue')
         f3.place(x=210,y=160)
+        # Loading image
         path=os.path.abspath('.')+"/src/GUI/Aqua.png"
         img=Image.open(path)
         img = img.resize((980, 530), Image. ANTIALIAS)
