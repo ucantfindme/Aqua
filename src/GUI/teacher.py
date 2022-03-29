@@ -10,19 +10,21 @@ import random
 from datetime import datetime
 from tkinter import filedialog
 from Classes.Welcome import login as logfun, forgotPassword as forpass, logout as lgo
-#from home import welcome
 
+
+# Teacher class
 class teacher():
     def __init__(self):
         pass
 
+    # Home func
     def refresh(self,h):
         h.destroy()
         teacher().home()
         pass
-    # welcome frame
+    # Welcome frame
     def home(self):
-        # home
+        # Home window
         h=Tk()
         h.title("AMS Teacher")
         h.configure(background='purple')
@@ -40,11 +42,19 @@ class teacher():
         log = Button(f1,text="Login",bg='orange',relief='flat',underline=0,font=('roboto',15,'bold'))
         log.place(x=85,y=340)
         # Registration button
+<<<<<<< HEAD
         reg = Button(f1,text="Register",bg='orange',relief='flat',underline=0,font=('roboto',15,'bold'))
         reg.place(x=85,y=380)
         #close button
         cls = Button(f1,text="Logout",bg='orange',relief='flat',underline=0,command=lambda:lgo(h),font=('roboto',15,'bold'))
         cls.place(x=85,y=500)
+=======
+        reg = Button(f1,text="Register",bg='orange',relief='flat',underline=0,font=('roboto',12,'bold'))
+        reg.place(x=90,y=380)
+        # Close button
+        cls = Button(f1,text="Logout",bg='orange',relief='flat',underline=0,command=lambda:lgo(h),font=('roboto',12,'bold'))
+        cls.place(x=90,y=500)
+>>>>>>> 843de92ce5514d4daa8c1b647d19595691843192
         
         # Frame 2
         f2 = Frame(h,width=980,height=130,bg='lightyellow')
@@ -56,6 +66,7 @@ class teacher():
         # Frame 3
         f3 = Frame(h,width=980,height=530,bg='lightblue')
         f3.place(x=210,y=160)
+        # Loading image
         path=os.path.abspath('.')+"/src/GUI/Aqua.png"
         img=Image.open(path)
         img = img.resize((980, 530), Image. ANTIALIAS)

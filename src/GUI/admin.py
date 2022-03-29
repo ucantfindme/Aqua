@@ -10,18 +10,19 @@ import random
 from datetime import datetime
 from tkinter import filedialog
 from Classes.Welcome import login as logfun, forgotPassword as forpass, logout as lgo
-#from home import welcome
+
 
 class admin():
     def __init__(self):
         pass
+#go back to the home page
 
     def refresh(self,h):
         h.destroy()
         admin().home()
         pass
-
-    # welcome frame
+    #Welcome Home
+    #Home window
     def home(self):
         # home
         h=Tk()
@@ -59,9 +60,15 @@ class admin():
         create.menu.add_command(label="Course")
         create.place(x=85,y=380)
 
+<<<<<<< HEAD
         #close button
         cls = Button(f1,text="Logout",bg='orange',relief='flat',underline=0,command=lambda:lgo(h),font=('roboto',15,'bold'))
         cls.place(x=85,y=500)
+=======
+        #Close button
+        cls = Button(f1,text="Logout",bg='orange',relief='flat',underline=0,command=lambda:lgo(h),font=('roboto',12,'bold'))
+        cls.place(x=90,y=500)
+>>>>>>> 843de92ce5514d4daa8c1b647d19595691843192
         
         # Frame 2
         f2 = Frame(h,width=980,height=130,bg='lightyellow')
@@ -74,6 +81,7 @@ class admin():
         # Frame 3
         f3 = Frame(h,width=980,height=530,bg='lightblue')
         f3.place(x=210,y=160)
+        # Loading image
         path=os.path.abspath('.')+"/src/GUI/Aqua.png"
         img=Image.open(path)
         img = img.resize((980, 530), Image. ANTIALIAS)

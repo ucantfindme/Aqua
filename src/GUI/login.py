@@ -12,7 +12,7 @@ from GUI.admin import admin
 from GUI.student import student
 from GUI.teacher import teacher
 from Classes.Welcome import login as logfun, forgotPassword as forpass, logout as lgo
-#from ...Code.main import login
+
 
 class l():
     def __init__(self):
@@ -27,6 +27,7 @@ class l():
         log.title("Login")
         log.configure(background='purple')
         
+        # Submit func
         def log_submit():
             name=e1.get()
             password=e2.get()
@@ -74,7 +75,13 @@ class l():
         # Submit button
         sub = Button(f2,text="Submit",bg='orange',command=log_submit,font=('roboto',12,'bold'))
         sub.grid(column=1,row=3,pady="3")
+<<<<<<< HEAD
 
         l4 = Button(f2,text="Forgot Password?",fg='lightyellow',bg='purple',relief='flat',command=lambda:f().fp(log,h), font=('roboto',12,'bold'))
+=======
+        
+        #Forgot password
+        l4 = Button(f2,text="Forgot Password?",fg='lightyellow',bg='purple',relief='flat',command=lambda:self.fp(log), font=('roboto',12,'bold'))
+>>>>>>> 843de92ce5514d4daa8c1b647d19595691843192
         l4.grid(row = 4, column = 1, pady = 10,padx=15)
         log.mainloop()
