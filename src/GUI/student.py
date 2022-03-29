@@ -59,7 +59,8 @@ class student():
         # Frame 3
         f3 = Frame(h,width=980,height=530,bg='lightblue')
         f3.place(x=210,y=160)
-        img = ImageTk.PhotoImage(Image.open(r"C:\Users\Varun Musunuru\Downloads\s6\SE\Aqua\src\GUI\teamAqua.png"))
+        path=os.path.abspath('.')+"/src/GUI/Aqua.png"
+        img = ImageTk.PhotoImage(Image.open(path))
         label = tk.Label(f3, image = img)
         label.place(x=220,y=20)
         h.mainloop()

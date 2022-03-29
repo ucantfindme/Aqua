@@ -1,11 +1,14 @@
 import sqlite3
+import os
 from Classes.Admin import Admin
 from Classes.Student import Student
 from Classes.Teacher import Teacher
 from GUI.home import welcome 
 def login(userid,password):
     #edit the path of folder DB accordingly
-    conn = sqlite3.connect('/Users/nspk/Desktop/Aqua/Code/DB/login.db')
+    path=os.path.abspath('.')
+    #print(path+'/src/DB/login.db')
+    conn = sqlite3.connect(path+'/src/DB/login.db')
     cursor = conn.cursor()
     lst=cursor.execute('''SELECT * FROM LOGS WHERE USERNAME=? AND PASS=?''',(userid,password))
     data=""
@@ -33,7 +36,8 @@ def forgotPassword(userid,otp):
     if otp!=19347:
         #pop-up wrong otp dialogue box
         return False
-    conn = sqlite3.connect('/Users/nspk/Desktop/Aqua/Code/DB/login.db')
+    path=os.path.abspath('.')
+    conn = sqlite3.connect(path+'/src/DB/login.db')
     cursor = conn.cursor()
     lst=cursor.execute('''SELECT * FROM LOGS WHERE USERNAME=?''',(userid,))
     if not lst:
