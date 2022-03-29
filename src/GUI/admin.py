@@ -75,6 +75,7 @@ class admin():
         # Frame 3
         f3 = Frame(h,width=980,height=530,bg='lightblue')
         f3.place(x=210,y=160)
+        # Loading image
         path=os.path.abspath('.')+"/src/GUI/Aqua.png"
         img=Image.open(path)
         img = img.resize((980, 530), Image. ANTIALIAS)
