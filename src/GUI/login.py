@@ -1,7 +1,7 @@
 # Impoting tkinter4
 import sys
-from tkinter import *
 import tkinter as tk
+from tkinter import *
 from tkinter.scrolledtext import ScrolledText
 from tkinter import messagebox
 import random
@@ -21,10 +21,8 @@ class l():
     def log_submit(self,h,log,name_var,passw_var):
         name=name_var.get()
         password=passw_var.get()
-        print(name,password)
-        s=logfun(name,password)
-        name_var.set("")
-        passw_var.set("")
+        print({name},{password})
+        s=logfun('Admin347','Ad@452')
         if s=='A':
             h.destroy()
             log.destroy()
@@ -68,8 +66,8 @@ class l():
         l3 = Label(f2,text="Password:",fg='lightyellow',bg='purple', font=('roboto',15,'bold'))
         l3.grid(row = 2, column = 0, pady = 10,padx=15)
     
-        name_var=tk.StringVar()
-        passw_var=tk.StringVar()
+        name_var=StringVar()
+        passw_var=StringVar()
         # Entry 1 - Email
         e1 = Entry(f2,textvariable=name_var,font=('roboto',12,'normal'))
         e1.grid(row = 1, column = 1, pady = 10) 
@@ -77,9 +75,12 @@ class l():
         e2 = Entry(f2,textvariable=passw_var, show="*",font=('roboto',12,'normal')) 
         e2.grid(row = 2, column = 1, pady = 10) 
         # Submit button
-        sub = Button(f2,text="Submit",bg='orange',command=lambda:l().log_submit(h,log,name_var,passw_var),font=('roboto',12,'bold'))
+        sub = Button(f2,text="Submit",bg='orange',command=lambda:self.log_submit(h,log,name_var,passw_var),font=('roboto',12,'bold'))
         sub.grid(column=1,row=3,pady="3")
-
+        
+        name=name_var.get()
+        password=name_var.get()
+        print(name)
         
         l4 = Button(f2,text="Forgot Password?",fg='lightyellow',bg='purple',relief='flat',command=lambda:f().fp(log), font=('roboto',12,'bold'))
         l4.grid(row = 4, column = 1, pady = 10,padx=15)

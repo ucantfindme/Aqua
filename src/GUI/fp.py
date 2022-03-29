@@ -66,6 +66,6 @@ class f():
         e2.grid(row = 2, column = 1, pady = 10) 
 
         # Submit button
-        sub = Button(f2,text="Submit",bg='orange',command=lambda:f().fp_submit(fp,name_var,pin_var),font=('roboto',12,'bold'))
+        sub = Button(f2,text="Submit",bg='orange',command=lambda:self.fp_submit(fp,name_var,pin_var),font=('roboto',12,'bold'))
         sub.grid(column=1,row=3,pady="3")
         fp.mainloop()

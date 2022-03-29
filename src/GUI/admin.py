@@ -36,7 +36,7 @@ class admin():
         f1.place(x=10,y=10)
 
         # Logout button
-        reg = Button(f1,text="Home",bg='orange',relief='flat',underline=0,command=lambda:admin().refresh(h),font=('roboto',12,'bold'))
+        reg = Button(f1,text="Home",bg='orange',relief='flat',underline=0,command=lambda:self.refresh(h),font=('roboto',12,'bold'))
         reg.place(x=90,y=40)
 
         # View button
