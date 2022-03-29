@@ -7,7 +7,7 @@ from tkinter import messagebox
 import random
 from datetime import datetime
 from tkinter import filedialog
-
+# Register class
 class r():
     def __init__(self):
         pass
