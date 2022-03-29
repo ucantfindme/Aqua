@@ -7,15 +7,26 @@ from tkinter import messagebox
 import random
 from datetime import datetime
 from tkinter import filedialog
+#from home import welcome
 
 class student():
     def __init__(self):
         pass
+
+    def refresh(self,h):
+        h.destroy()
+        student().home()
+        pass
+
+    def logout(self,h):
+        h.destroy()
+        #welcome().home()
+
     # welcome frame
     def home(self):
         # home
         h=Tk()
-        h.title("AMS")
+        h.title("AMS Student")
         h.configure(background='purple')
         h.geometry("1200x700+170+80")
         h.maxsize(1200,700)
@@ -25,16 +36,16 @@ class student():
         f1 = Frame(h,width=190,height=680,bg='orange')
         f1.place(x=10,y=10)
         # Home button
-        hom = Button(f1,text="Home",bg='orange',relief='flat',underline=0,command=welcome().home,font=('roboto',12,'bold'))
+        hom = Button(f1,text="Profile",bg='orange',relief='flat',underline=0,font=('roboto',12,'bold'))
         hom.place(x=90,y=40)
         # Login button
-        log = Button(f1,text="Login",bg='orange',relief='flat',underline=0,command=lambda:l().login(h),font=('roboto',12,'bold'))
+        log = Button(f1,text="Login",bg='orange',relief='flat',underline=0,font=('roboto',12,'bold'))
         log.place(x=90,y=340)
         # Registration button
-        reg = Button(f1,text="Register",bg='orange',relief='flat',underline=0,command=lambda:r().register(h),font=('roboto',12,'bold'))
+        reg = Button(f1,text="Register",bg='orange',relief='flat',underline=0,font=('roboto',12,'bold'))
         reg.place(x=90,y=380)
         #close button
-        cls = Button(f1,text="Close",bg='orange',relief='flat',underline=0,command=h.destroy,font=('roboto',12,'bold'))
+        cls = Button(f1,text="Logout",bg='orange',relief='flat',underline=0,command=lambda:student().logout(h),font=('roboto',12,'bold'))
         cls.place(x=90,y=500)
         
         # Frame 2

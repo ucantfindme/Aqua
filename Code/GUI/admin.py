@@ -7,15 +7,26 @@ from tkinter import messagebox
 import random
 from datetime import datetime
 from tkinter import filedialog
+#from home import welcome
 
 class admin():
     def __init__(self):
         pass
+
+    def refresh(self,h):
+        h.destroy()
+        admin().home()
+        pass
+
+    def logout(self,h):
+        h.destroy()
+        #welcome().home()
+
     # welcome frame
     def home(self):
         # home
         h=Tk()
-        h.title("AMS")
+        h.title("AMS Admin")
         h.configure(background='purple')
         h.geometry("1200x700+170+80")
         h.maxsize(1200,700)
@@ -24,22 +35,39 @@ class admin():
         # Frame 1
         f1 = Frame(h,width=190,height=680,bg='orange')
         f1.place(x=10,y=10)
-        # Home button
-        hom = Button(f1,text="Home",bg='orange',relief='flat',underline=0,command=welcome().home,font=('roboto',12,'bold'))
-        hom.place(x=90,y=40)
-        # Login button
-        log = Button(f1,text="Login",bg='orange',relief='flat',underline=0,command=lambda:l().login(h),font=('roboto',12,'bold'))
-        log.place(x=90,y=340)
-        # Registration button
-        reg = Button(f1,text="Register",bg='orange',relief='flat',underline=0,command=lambda:r().register(h),font=('roboto',12,'bold'))
-        reg.place(x=90,y=380)
+
+        # Logout button
+        reg = Button(f1,text="Home",bg='orange',relief='flat',underline=0,command=lambda:admin().refresh(h),font=('roboto',12,'bold'))
+        reg.place(x=90,y=40)
+
+        # View button
+        view = Menubutton(f1,text="View",bg='orange',relief='flat',underline=0,font=('roboto',12,'bold'))
+        view.menu =  Menu ( view, tearoff = 0, bg='lightblue' ,font=('roboto',12,'normal'))
+        view["menu"] =  view.menu
+        view.menu.add_command(label="Student registration")
+        view.menu.add_command(label="Teacher registration")
+        view.menu.add_command(label="Class registration")
+        view.menu.add_command(label="Course registration")
+        view.place(x=90,y=340)
+
+        # Create button
+        create = Menubutton(f1,text="Create",bg='orange',relief='flat',underline=0,font=('roboto',12,'bold'))
+        create.menu =  Menu ( create, tearoff = 0, bg='lightblue' ,font=('roboto',12,'normal'))
+        create["menu"] =  create.menu
+        create.menu.add_command(label="Student")
+        create.menu.add_command(label="Teacher")
+        create.menu.add_command(label="Class")
+        create.menu.add_command(label="Course")
+        create.place(x=90,y=380)
+
         #close button
-        cls = Button(f1,text="Close",bg='orange',relief='flat',underline=0,command=h.destroy,font=('roboto',12,'bold'))
+        cls = Button(f1,text="Logout",bg='orange',relief='flat',underline=0,command=lambda:admin().logout(h),font=('roboto',12,'bold'))
         cls.place(x=90,y=500)
         
         # Frame 2
         f2 = Frame(h,width=980,height=130,bg='lightyellow')
         f2.place(x=210,y=10)
+
         # Heading label
         l2 = Label(f2,text="Welcome to AMS",bg='lightyellow',font=('roboto',50,'bold'))
         l2.place(x=220,y=35)

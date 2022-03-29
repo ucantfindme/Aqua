@@ -12,7 +12,7 @@ def login(userid,password):
     if not data:
         print("Incorrect Password")
         #pop-up a dialogue box 
-        return False
+        return 'F'
     #login successfull pop-up message
     if data[2]=='A':
         print("Welcome Admin,",data[0])

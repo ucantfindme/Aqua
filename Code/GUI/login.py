@@ -8,7 +8,10 @@ import random
 from datetime import datetime
 from tkinter import filedialog
 from fp import f
-from ...Code.main import login
+from admin import admin
+from student import student
+from teacher import teacher
+#from ...Code.main import login
 
 class l():
     def __init__(self):
@@ -19,9 +22,16 @@ class l():
         password=passw_var.get()
         name_var.set("")
         passw_var.set("")
-        if login(name,password):
+        s='A' #login(name,password)
+        if s=='A':
             log.destroy()
-            #home()
+            admin().home()
+        elif s=='S':
+            log.destroy()
+            student().home()
+        elif s=='T':
+            log.destroy()
+            teacher().home()
         else:
             messagebox.showerror("Error", "PLease enter a valid Username or Password")
         pass

@@ -10,7 +10,8 @@ from tkinter import filedialog
 from student import student
 from teacher import teacher
 from admin import admin
-from ...Code.main import forgotPassword
+#from ...Code.main import forgotPassword
+
 class f():
     def __init__(self):
         pass
@@ -20,11 +21,13 @@ class f():
         pin=pin_var.get()
         name_var.set("")
         pin_var.set("")
+        """
         if forgotPassword(name,pin):
             fp.destroy()
             #home()
         else:
             messagebox.showerror("Error", "PLease enter a valid Username and Pin")
+        """
         pass
 
     #Forgot password
