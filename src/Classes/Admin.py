@@ -1,27 +1,83 @@
 
 from Classes import Person, Student, Teacher, Class, Course
+import sqlite3
+import os
 class Admin(Person.Person):
-    def __init__(self,userid,name,dob,ph,email,type):
+    def __init__(self,userid,name,dob,ph,email,type,adminid):
         super().__init__(userid,name,dob,ph,email,type)
+        self.adminid=adminid
         
     def createStudent(self,studentid,name,dob,ph,email,batch,password):
         stu=Student.Student(studentid,name,dob,ph,email,batch,password)
-        #update this to DB
+        path=os.path.abspath('.')+"/src/DB"
+        conn = sqlite3.connect(path+'/person.db')
+        cursor = conn.cursor()
+        cursor.execute('''INSERT INTO PERSON VALUES (?,?,?,?,?,'S')''',(studentid,name,dob,ph,email))
+        cursor.execute('''INSERT INTO STUDENT VALUES (?,?,?)''',(studentid,name,batch))
+        # Display data inserted
+        """print("Data Inserted in the table: ")
+        data=cursor.execute('''SELECT * FROM PERSON''')
+        for row in data:
+            print(row)"""
+        #Commit your changes in the database	
+        conn.commit()
+        #Closing the connection
+        conn.close()
         return stu
     
     def createTeacher(self,name,dob,ph,email,teacherId,department,courses_taught,password):
         tea=Teacher.Teacher(name,dob,ph,email,teacherId,department,courses_taught,password)
         #Add new column to Teacher Table in DB
+        path=os.path.abspath('.')+"/src/DB"
+        conn = sqlite3.connect(path+'/person.db')
+        cursor = conn.cursor()
+        cursor.execute('''INSERT INTO PERSON VALUES (?,?,?,?,?,'S')''',(teacherId,name,dob,ph,email))
+        cursor.execute('''INSERT INTO TEACHER VALUES (?,?,?)''',(teacherId,name,department,courses_taught))
+        # Display data inserted
+        """print("Data Inserted in the table: ")
+        data=cursor.execute('''SELECT * FROM PERSON''')
+        for row in data:
+            print(row)"""
+        #Commit your changes in the database	
+        conn.commit()
+        #Closing the connection
+        conn.close()
         return tea
     
     def createClass(self,ClassId,Advisor,Students,CoursesEnrolled):
         cla=Class.Class(ClassId,Advisor,Students,CoursesEnrolled)
         #Add new column to Class Table in DB
+        path=os.path.abspath('.')+"/src/DB"
+        conn = sqlite3.connect(path+'/person.db')
+        cursor = conn.cursor()
+        cursor.execute('''INSERT INTO CLASS VALUES (?,?,?,?)''',(ClassId,Advisor,Students,CoursesEnrolled))
+        # Display data inserted
+        """print("Data Inserted in the table: ")
+        data=cursor.execute('''SELECT * FROM PERSON''')
+        for row in data:
+            print(row)"""
+        #Commit your changes in the database	
+        conn.commit()
+        #Closing the connection
+        conn.close()
         return cla
     
-    def createCourse(self,classid,Title,Prerequisites,ClassEnrolled,FacultyAssigned):
-        cou=Course.Course(classid,Title,Prerequisites,ClassEnrolled,FacultyAssigned,[])
+    def createCourse(self,CourseId,Title,Prerequisites,ClassEnrolled,FacultyAssigned):
+        cou=Course.Course(CourseId,Title,Prerequisites,ClassEnrolled,FacultyAssigned,[])
         #Add new column to Course Table in DB
+        path=os.path.abspath('.')+"/src/DB"
+        conn = sqlite3.connect(path+'/person.db')
+        cursor = conn.cursor()
+        cursor.execute('''INSERT INTO COURSE VALUES (?,?,?,?,?,'')''',(CourseId,Title,Prerequisites,ClassEnrolled,FacultyAssigned))
+        # Display data inserted
+        """print("Data Inserted in the table: ")
+        data=cursor.execute('''SELECT * FROM PERSON''')
+        for row in data:
+            print(row)"""
+        #Commit your changes in the database	
+        conn.commit()
+        #Closing the connection
+        conn.close()
         return cou
     
     def viewStudentRegistrations(self):
@@ -33,5 +89,4 @@ class Admin(Person.Person):
     def viewClassRegistrations(self):
         pass
     
-x=Admin("go","1212",56666,"vasa",101,"ss")
 
