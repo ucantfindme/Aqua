@@ -109,7 +109,7 @@ cursor = conn.cursor()
 table ="""CREATE TABLE CLASS(CLASSID VARCHAR(15),ADVISOR VARCHAR(15),STUDENTS VARCHAR(1023),COURSES_ENROLLED VARCHAR(255));"""
 cursor.execute(table)
 # Queries to INSERT records.
-cursor.execute('''INSERT INTO CLASS VALUES ('CSED', 'NSPKrishna', 'NaSaPaKri,Nobrain,AJKrishna,PKrishna,Varun36,Deepti,Bhargav11,Harthik07,Sanketh12', 'CSE', 'CS,DS,SE,SNA,DL,PPL')''')
+cursor.execute('''INSERT INTO CLASS VALUES ('CSED', 'NSPKrishna', 'NaSaPaKri,Nobrain,AJKrishna,PKrishna,Varun36,Deepti,Bhargav11,Harthik07,Sanketh12', 'CS,DS,SE,SNA,DL,PPL')''')
 # Display data inserted
 """print("Data Inserted in the table: ")
 data=cursor.execute('''SELECT * FROM PERSON''')
