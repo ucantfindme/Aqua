@@ -55,13 +55,13 @@ class f():
         l4.grid(row = 3, column = 0, pady = 10,padx=15)
 
         # Entry 1 - Email
-        e1 = Entry(f2,font=('roboto',12,'normal'))
+        e1 = Entry(f2, font=('roboto',12,'normal'))
         e1.grid(row = 1, column = 1, pady = 10) 
         # Entry 2 - New password
-        e2 = Entry(f2, font=('roboto',12,'normal')) 
+        e2 = Entry(f2, show="*",font=('roboto',12,'normal')) 
         e2.grid(row = 2, column = 1, pady = 10) 
         # Entry 2 - Confirm password 
-        e3 = Entry(f2, font=('roboto',12,'normal')) 
+        e3 = Entry(f2, show="*",font=('roboto',12,'normal')) 
         e3.grid(row = 3, column = 1, pady = 10)
 
         # Submit button
@@ -111,7 +111,7 @@ class f():
         e1 = Entry(f2,textvariable=name_var,font=('roboto',12,'normal'))
         e1.grid(row = 1, column = 1, pady = 10) 
         # Entry 2 - Pin 
-        e2 = Entry(f2,textvariable=pin_var, font=('roboto',12,'normal')) 
+        e2 = Entry(f2,textvariable=pin_var,show='*', font=('roboto',12,'normal')) 
         e2.grid(row = 2, column = 1, pady = 10) 
 
         # Submit button
