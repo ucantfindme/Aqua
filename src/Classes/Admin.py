@@ -1,8 +1,9 @@
 
 from Classes import Person, Student, Teacher, Class, Course
 class Admin(Person.Person):
-    def __init__(self,userid,name,dob,ph,email,type):
+    def __init__(self,userid,name,dob,ph,email,type,adminid):
         super().__init__(userid,name,dob,ph,email,type)
+        self.adminid=adminid
         
     def createStudent(self,studentid,name,dob,ph,email,batch,password):
         stu=Student.Student(studentid,name,dob,ph,email,batch,password)
