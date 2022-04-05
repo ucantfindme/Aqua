@@ -10,7 +10,6 @@ import random
 from datetime import datetime
 from tkinter import filedialog
 from GUI.login import l
-from GUI.register import r
 
 # Welcome class
 class welcome():
@@ -44,7 +43,7 @@ class welcome():
         log = Button(f1,text="Login",bg='orange',relief='flat',underline=0,command=lambda:l().login(h),font=('roboto',15,'bold'))
         log.place(x=85,y=340)
         # Registration button
-        reg = Button(f1,text="Register",bg='orange',relief='flat',underline=0,command=lambda:r().register(h),font=('roboto',15,'bold'))
+        reg = Button(f1,text="Register",bg='orange',relief='flat',underline=0,font=('roboto',15,'bold'))
         reg.place(x=85,y=380)
         #close button
         cls = Button(f1,text="Close",bg='orange',relief='flat',underline=0,command=lambda:h.destroy(),font=('roboto',15,'bold'))

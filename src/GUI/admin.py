@@ -9,6 +9,7 @@ from tkinter import messagebox
 import random
 from datetime import datetime
 from tkinter import filedialog
+from GUI.register import r
 from Classes.Welcome import login as logfun, forgotPassword as forpass, logout as lgo
 
 
@@ -54,10 +55,10 @@ class admin():
         create = Menubutton(f1,text="Create",bg='orange',relief='flat',underline=0,font=('roboto',15,'bold'))
         create.menu =  Menu ( create, tearoff = 0, bg='lightblue' ,font=('roboto',13,'normal'))
         create["menu"] =  create.menu
-        create.menu.add_command(label="Student")
-        create.menu.add_command(label="Teacher")
-        create.menu.add_command(label="Class")
-        create.menu.add_command(label="Course")
+        create.menu.add_command(label="Student",command=lambda:r().sregister())
+        create.menu.add_command(label="Teacher",command=lambda:r().tregister())
+        create.menu.add_command(label="Class",command=lambda:r().classregister())
+        create.menu.add_command(label="Course",command=lambda:r().courseregister())
         create.place(x=85,y=380)
 
         #close button
