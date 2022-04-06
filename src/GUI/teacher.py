@@ -36,14 +36,22 @@ class teacher():
         f1 = Frame(h,width=190,height=680,bg='orange')
         f1.place(x=10,y=10)
         # Home button
-        hom = Button(f1,text="Home",bg='orange',relief='flat',underline=0,command=lambda:self.refresh(h),font=('roboto',15,'bold'))
-        hom.place(x=85,y=40)
-        # Login button
-        log = Button(f1,text="Login",bg='orange',relief='flat',underline=0,font=('roboto',15,'bold'))
-        log.place(x=85,y=340)
+        pro = Button(f1,text="Profile",bg='orange',relief='flat',underline=0,command=lambda:self.refresh(h),font=('roboto',15,'bold'))
+        pro.place(x=85,y=40)
+        # View button
+        view = Menubutton(f1,text="View",bg='orange',relief='flat',underline=0,font=('roboto',15,'bold'))
+        view.menu =  Menu ( view, tearoff = 0, bg='lightblue' ,font=('roboto',13,'normal'))
+        view["menu"] =  view.menu
+        view.menu.add_command(label="Sheduled Meetings")
+        view.menu.add_command(label="Meeting Attendance")
+        view.menu.add_command(label="Overall Attendance")
+        view.place(x=85,y=300)
         # Registration button
-        reg = Button(f1,text="Register",bg='orange',relief='flat',underline=0,font=('roboto',15,'bold'))
-        reg.place(x=85,y=380)
+        sm = Button(f1,text="Shedule Meeting",bg='orange',relief='flat',underline=0,font=('roboto',15,'bold'))
+        sm.place(x=85,y=340)
+        # Registration button
+        sm = Button(f1,text="Upload Attendance",bg='orange',relief='flat',underline=0,font=('roboto',15,'bold'))
+        sm.place(x=85,y=380)
         #close button
         cls = Button(f1,text="Logout",bg='orange',relief='flat',underline=0,command=lambda:lgo(h),font=('roboto',15,'bold'))
         cls.place(x=85,y=500)

@@ -33,6 +33,7 @@ class r():
             print(s)
             if s:
                 messagebox.showinfo("Register", "Registration Successful")
+                reg.destroy()
             else:
                 messagebox.showerror("Error", "PLease enter valid details")
 
@@ -116,6 +117,7 @@ class r():
             print(s)
             if s:
                 messagebox.showinfo("Register", "Registration Successful")
+                reg.destroy()
             else:
                 messagebox.showerror("Error", "PLease enter valid details")
 
@@ -202,6 +204,7 @@ class r():
             print(s)
             if s:
                 messagebox.showinfo("Register", "Registration Successful")
+                reg.destroy()
             else:
                 messagebox.showerror("Error", "PLease enter valid details")
 
@@ -270,6 +273,7 @@ class r():
             print(s)
             if s:
                 messagebox.showinfo("Register", "Registration Successful")
+                reg.destroy()
             else:
                 messagebox.showerror("Error", "PLease enter valid details")
 
