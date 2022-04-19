@@ -23,6 +23,13 @@ class Admin(Person.Person):
         conn.commit()
         #Closing the connection
         conn.close()
+        
+        conn = sqlite3.connect(path+'/login.db')
+        cursor = conn.cursor()
+        cursor.execute('''INSERT INTO LOGS VALUES (?,?,?)''',(studentid,password,'S'))
+        conn.commit()
+        conn.close()
+        
         return stu
     
     def createTeacher(self,name,dob,ph,email,teacherId,department,courses_taught,password):
@@ -42,6 +49,13 @@ class Admin(Person.Person):
         conn.commit()
         #Closing the connection
         conn.close()
+        
+        conn = sqlite3.connect(path+'/login.db')
+        cursor = conn.cursor()
+        cursor.execute('''INSERT INTO LOGS VALUES (?,?,?)''',(teacherId,password,'T'))
+        conn.commit()
+        conn.close()
+        
         return tea
     
     def createClass(self,ClassId,Advisor,Students,CoursesEnrolled):
