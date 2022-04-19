@@ -36,14 +36,18 @@ class student():
         f1 = Frame(h,width=190,height=680,bg='orange')
         f1.place(x=10,y=10)
         # Home button
-        hom = Button(f1,text="Profile",bg='orange',relief='flat',underline=0,font=('roboto',15,'bold'))
-        hom.place(x=85,y=40)
+        pro = Button(f1,text="Profile",bg='orange',relief='flat',underline=0,font=('roboto',15,'bold'))
+        pro.place(x=85,y=40)
         # Login button
-        log = Button(f1,text="Login",bg='orange',relief='flat',underline=0,font=('roboto',15,'bold'))
-        log.place(x=85,y=340)
-        # Registration button
-        reg = Button(f1,text="Register",bg='orange',relief='flat',underline=0,font=('roboto',15,'bold'))
-        reg.place(x=85,y=380)
+        att = Button(f1,text="Attendance",bg='orange',relief='flat',underline=0,font=('roboto',15,'bold'))
+        att.place(x=85,y=340)
+
+        view = Menubutton(f1,text="View",bg='orange',relief='flat',underline=0,font=('roboto',15,'bold'))
+        view.menu =  Menu ( view, tearoff = 0, bg='lightblue' ,font=('roboto',13,'normal'))
+        view["menu"] =  view.menu
+        view.menu.add_command(label="Courses Registered")
+        view.menu.add_command(label="Calender")
+        view.place(x=85,y=380)
         #close button
         cls = Button(f1,text="Logout",bg='orange',relief='flat',underline=0,command=lambda:lgo(h),font=('roboto',15,'bold'))
         cls.place(x=85,y=500)
