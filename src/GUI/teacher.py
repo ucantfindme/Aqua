@@ -22,6 +22,46 @@ class teacher():
         h.destroy()
         teacher().home()
         pass
+    
+    def upload(self,h):
+        u=Toplevel(h)
+        u.geometry("300x200+940+445")
+        u.maxsize(400,480)
+        u.minsize(400,200)
+        u.title("File Uplaod")
+        u.configure(background='purple')
+
+        def browseFiles():
+            filename = filedialog.askopenfilename(initialdir = "/",
+                                                title = "Select a File",
+                                                filetypes = (("Text files",
+                                                                "*.txt*"),
+                                                            ("all files",
+                                                                "*.*")))
+            if filename is not None:
+                messagebox.showinfo("Upload", "Upload Successful")
+                u.destroy()
+            else:
+                messagebox.showerror("Error", "PLease choose a file.")
+
+        
+        f1 = Frame(u,width=400,height=100,bg='purple')
+        f1.place(x=0,y=0)
+        # Label 1
+        l1 = Label(f1,text="Upload Attendance",bg='purple',fg='lightyellow',font=('verdana',22,'bold'))
+        l1.place(x=35,y=20)
+        
+        # Frame 2
+        f2 = Frame(u,width=400,height=300,bg='purple')
+        f2.place(x=0,y=80)
+
+        l2 = Label(f2,text="",fg='lightyellow',bg='purple', font=('roboto',10,'bold'))
+        l2.grid(row = 1, column = 0, pady = 10,padx=10) 
+
+        sub = Button(f2,text="Choose",bg='orange',command=browseFiles,font=('roboto',12,'bold'))
+        sub.grid(column=0,row=2,pady="3",padx=150)
+
+        u.mainloop()
     # Welcome frame
     def home(self):
         # Home window
@@ -37,7 +77,7 @@ class teacher():
         f1.place(x=10,y=10)
         # Home button
         pro = Button(f1,text="Profile",bg='orange',relief='flat',underline=0,command=lambda:self.refresh(h),font=('roboto',15,'bold'))
-        pro.place(x=85,y=40)
+        pro.place(x=2,y=40)
         # View button
         view = Menubutton(f1,text="View",bg='orange',relief='flat',underline=0,font=('roboto',15,'bold'))
         view.menu =  Menu ( view, tearoff = 0, bg='lightblue' ,font=('roboto',13,'normal'))
@@ -45,16 +85,16 @@ class teacher():
         view.menu.add_command(label="Sheduled Meetings")
         view.menu.add_command(label="Meeting Attendance")
         view.menu.add_command(label="Overall Attendance")
-        view.place(x=85,y=300)
+        view.place(x=2,y=300)
         # Registration button
         sm = Button(f1,text="Shedule Meeting",bg='orange',relief='flat',underline=0,font=('roboto',15,'bold'))
-        sm.place(x=85,y=340)
+        sm.place(x=2,y=340)
         # Registration button
-        sm = Button(f1,text="Upload Attendance",bg='orange',relief='flat',underline=0,font=('roboto',15,'bold'))
-        sm.place(x=85,y=380)
+        sm = Button(f1,text="Upload Attendance",bg='orange',relief='flat',underline=0,command=lambda:self.upload(h),font=('roboto',15,'bold'))
+        sm.place(x=2,y=380)
         #close button
         cls = Button(f1,text="Logout",bg='orange',relief='flat',underline=0,command=lambda:lgo(h),font=('roboto',15,'bold'))
-        cls.place(x=85,y=500)
+        cls.place(x=2,y=500)
         
         # Frame 2
         f2 = Frame(h,width=980,height=130,bg='lightyellow')

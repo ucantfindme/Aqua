@@ -2,6 +2,7 @@ import sqlite3
 import os
 from tkinter import *
 import tkinter as tk
+from tkinter import messagebox
 
 def login(userid,password):
     #edit the path of folder DB accordingly
@@ -50,7 +51,9 @@ def updatepass(userid,newpass):
     conn.close()
     return True
 def logout(h):
-    h.destroy()
+    x=messagebox.askquestion("Logout", "Are you sure?")
+    print(x)
+    if x=="yes": h.destroy()
     #return to default window with no user logged in
     pass
 """login("Admin347","marinpappa")
