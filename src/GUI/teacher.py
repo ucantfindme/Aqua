@@ -20,9 +20,73 @@ class teacher():
     # Home func
     def refresh(self,h):
         h.destroy()
-        teacher().home()
+        self.home()
         pass
     
+    def profile(self,name):
+        reg=Tk()
+        reg.geometry("300x500+940+270")
+        reg.maxsize(400,500)
+        reg.minsize(400,500)
+        reg.title("Profile")
+        reg.configure(background='purple')
+
+        f1 = Frame(reg,width=400,height=100,bg='purple')
+        f1.place(x=0,y=0)
+        # Label 1
+        l1 = Label(f1,text="Profile",bg='purple',fg='lightyellow',font=('verdana',22,'bold'))
+        l1.place(x=150,y=20)
+        
+        # Frame 2
+        f2 = Frame(reg,width=400,height=300,bg='purple')
+        f2.place(x=20,y=80)
+
+        l2 = Label(f2,text="Teacher Id:",fg='lightyellow',bg='purple', font=('roboto',13,'bold'))
+        l2.grid(row = 1, column = 0, pady = 10,padx=10) 
+
+        l3 = Label(f2,text="Name:",fg='lightyellow',bg='purple', font=('roboto',13,'bold'))
+        l3.grid(row = 2, column = 0, pady = 10,padx=10)
+
+        l4 = Label(f2,text="DOB:",fg='lightyellow',bg='purple', font=('roboto',13,'bold'))
+        l4.grid(row = 3, column = 0, pady = 10,padx=10) 
+
+        l5 = Label(f2,text="Phone no:",fg='lightyellow',bg='purple', font=('roboto',13,'bold'))
+        l5.grid(row = 4, column = 0, pady = 10,padx=10) 
+
+        l6 = Label(f2,text="E-Mail:",fg='lightyellow',bg='purple', font=('roboto',13,'bold'))
+        l6.grid(row = 5, column = 0, pady = 10,padx=10) 
+
+        l7 = Label(f2,text="Department:",fg='lightyellow',bg='purple', font=('roboto',13,'bold'))
+        l7.grid(row = 6, column = 0, pady = 10,padx=10) 
+
+        l8 = Label(f2,text="Courses Taught:",fg='lightyellow',bg='purple', font=('roboto',13,'bold'))
+        l8.grid(row = 7, column = 0, pady = 10,padx=10) 
+
+    
+        
+        l12 = Label(f2,text="Teacher Id:",fg='lightyellow',bg='purple', font=('roboto',13,'bold'))
+        l12.grid(row = 1, column = 1, pady = 10,padx=10) 
+
+        l13 = Label(f2,text="Name:",fg='lightyellow',bg='purple', font=('roboto',13,'bold'))
+        l13.grid(row = 2, column = 1, pady = 10,padx=10)
+
+        l14 = Label(f2,text="DOB:",fg='lightyellow',bg='purple', font=('roboto',13,'bold'))
+        l14.grid(row = 3, column = 1, pady = 10,padx=10) 
+
+        l15 = Label(f2,text="Phone no:",fg='lightyellow',bg='purple', font=('roboto',13,'bold'))
+        l15.grid(row = 4, column = 1, pady = 10,padx=10) 
+
+        l16 = Label(f2,text="E-Mail:",fg='lightyellow',bg='purple', font=('roboto',13,'bold'))
+        l16.grid(row = 5, column = 1, pady = 10,padx=10) 
+
+        l17 = Label(f2,text="Department:",fg='lightyellow',bg='purple', font=('roboto',13,'bold'))
+        l17.grid(row = 6, column = 1, pady = 10,padx=10) 
+
+        l18 = Label(f2,text="Courses Taught:",fg='lightyellow',bg='purple', font=('roboto',13,'bold'))
+        l18.grid(row = 7, column = 1, pady = 10,padx=10) 
+
+        reg.mainloop()
+
     def upload(self,h):
         u=Toplevel(h)
         u.geometry("300x200+940+445")
@@ -76,7 +140,7 @@ class teacher():
         f1 = Frame(h,width=190,height=680,bg='orange')
         f1.place(x=10,y=10)
         # Home button
-        pro = Button(f1,text="Profile",bg='orange',relief='flat',underline=0,command=lambda:self.refresh(h),font=('roboto',15,'bold'))
+        pro = Button(f1,text="Profile",bg='orange',relief='flat',underline=0,command=lambda:self.profile(name),font=('roboto',15,'bold'))
         pro.place(x=2,y=40)
         # View button
         view = Menubutton(f1,text="View",bg='orange',relief='flat',underline=0,font=('roboto',15,'bold'))
