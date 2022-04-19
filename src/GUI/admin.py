@@ -24,7 +24,7 @@ class admin():
         pass
     #Welcome Home
     #Home window
-    def home(self):
+    def home(self,name):
         # home
         h=Tk()
         h.title("AMS Admin")
@@ -70,7 +70,7 @@ class admin():
         f2.place(x=210,y=10)
 
         # Heading label
-        l2 = Label(f2,text="Welcome to AMS",fg='black',bg='lightyellow',font=('roboto',50,'bold'))
+        l2 = Label(f2,text="Welcome "+name,fg='black',bg='lightyellow',font=('roboto',50,'bold'))
         l2.place(x=220,y=35)
         
         # Frame 3

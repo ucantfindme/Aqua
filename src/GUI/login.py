@@ -37,15 +37,15 @@ class l():
             if s=='A':
                 h.destroy()
                 log.destroy()
-                admin().home()
+                admin().home(name)
             elif s=='S':
                 h.destroy()
                 log.destroy()
-                student().home()
+                student().home(name)
             elif s=='T':
                 h.destroy()
                 log.destroy()
-                teacher().home()
+                teacher().home(name)
             else:
                 messagebox.showerror("Error", "PLease enter a valid Username or Password")
 

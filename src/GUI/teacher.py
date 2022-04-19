@@ -63,7 +63,7 @@ class teacher():
 
         u.mainloop()
     # Welcome frame
-    def home(self):
+    def home(self,name):
         # Home window
         h=Tk()
         h.title("AMS Teacher")
@@ -100,7 +100,7 @@ class teacher():
         f2 = Frame(h,width=980,height=130,bg='lightyellow')
         f2.place(x=210,y=10)
         # Heading label
-        l2 = Label(f2,text="Welcome to AMS",fg='black',bg='lightyellow',font=('roboto',50,'bold'))
+        l2 = Label(f2,text="Welcome "+name,fg='black',bg='lightyellow',font=('roboto',50,'bold'))
         l2.place(x=220,y=35)
         
         # Frame 3
