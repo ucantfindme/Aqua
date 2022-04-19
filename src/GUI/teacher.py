@@ -25,9 +25,9 @@ class teacher():
     
     def profile(self,name):
         reg=Tk()
-        reg.geometry("300x500+940+270")
-        reg.maxsize(400,500)
-        reg.minsize(400,500)
+        reg.geometry("300x42+940+315")
+        reg.maxsize(400,420)
+        reg.minsize(400,420)
         reg.title("Profile")
         reg.configure(background='purple')
 
@@ -98,8 +98,8 @@ class teacher():
         def browseFiles():
             filename = filedialog.askopenfilename(initialdir = "/",
                                                 title = "Select a File",
-                                                filetypes = (("Text files",
-                                                                "*.txt*"),
+                                                filetypes = (("Csv files",
+                                                                "*.csv*"),
                                                             ("all files",
                                                                 "*.*")))
             if filename is not None:

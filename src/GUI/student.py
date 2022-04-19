@@ -24,10 +24,10 @@ class student():
     
     def profile(self,name):
         reg=Tk()
-        reg.geometry("300x480+940+285")
-        reg.maxsize(400,480)
-        reg.minsize(400,480)
-        reg.title("Register")
+        reg.geometry("300x420+940+315")
+        reg.maxsize(400,420)
+        reg.minsize(400,420)
+        reg.title("Profile")
         reg.configure(background='purple')
 
         f1 = Frame(reg,width=400,height=100,bg='purple')
@@ -94,20 +94,20 @@ class student():
         f1.place(x=10,y=10)
         # Home button
         pro = Button(f1,text="Profile",bg='orange',relief='flat',underline=0,command=lambda:self.profile(name),font=('roboto',15,'bold'))
-        pro.place(x=85,y=40)
+        pro.place(x=45,y=40)
         # Login button
         att = Button(f1,text="Attendance",bg='orange',relief='flat',underline=0,font=('roboto',15,'bold'))
-        att.place(x=85,y=340)
+        att.place(x=45,y=340)
 
         view = Menubutton(f1,text="View",bg='orange',relief='flat',underline=0,font=('roboto',15,'bold'))
         view.menu =  Menu ( view, tearoff = 0, bg='lightblue' ,font=('roboto',13,'normal'))
         view["menu"] =  view.menu
         view.menu.add_command(label="Courses Registered")
         view.menu.add_command(label="Calender")
-        view.place(x=85,y=380)
+        view.place(x=45,y=380)
         #close button
         cls = Button(f1,text="Logout",bg='orange',relief='flat',underline=0,command=lambda:lgo(h),font=('roboto',15,'bold'))
-        cls.place(x=85,y=500)
+        cls.place(x=45,y=500)
         
         # Frame 2
         f2 = Frame(h,width=980,height=130,bg='lightyellow')
