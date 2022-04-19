@@ -9,7 +9,5 @@ class Meeting:
         self.start_time=start_time
         self.duration=duration
         self.attendance_report=attendance_report
-    def  generateattendance(self):
-        pass
     def isPresent(self):
         pass
