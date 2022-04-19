@@ -32,6 +32,9 @@ class Teacher(Person.Person):
             reader=csv.reader(f,delimeter=" ")
             for ev in reader:
                 eve.append(ev)
+        pres=set()
+        for i,*k in eve:
+            pres.add(i)
         
         
     def viewScheduleMeetings(self):
