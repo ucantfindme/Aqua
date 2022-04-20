@@ -10,6 +10,7 @@ import random
 from datetime import datetime
 from tkinter import filedialog
 from Classes.Welcome import login as logfun, forgotPassword as forpass, logout as lgo
+from Classes.Teacher import Teacher
 
 
 # Teacher class
@@ -87,6 +88,90 @@ class teacher():
 
         reg.mainloop()
 
+    def sm(self,name):
+        reg=Tk()
+        reg.geometry("300x450+940+300")
+        reg.maxsize(400,450)
+        reg.minsize(400,450)
+        reg.title("Shedule")
+        reg.configure(background='purple')
+
+        def reg_submit():
+            meeting_id=e1.get()
+            title=e2.get()
+            conducted_by=e3.get()
+            course=e4.get()
+            date=e5.get()
+            start_time=e6.get()
+            duration=e7.get()
+            s=Teacher.scheduleMeeting(self,meeting_id,title,conducted_by,course,date,start_time,duration)
+            print(s)
+            if s:
+                messagebox.showinfo("Register", "Registration Successful")
+                reg.destroy()
+            else:
+                messagebox.showerror("Error", "PLease enter valid details")
+
+
+        f1 = Frame(reg,width=400,height=100,bg='purple')
+        f1.place(x=0,y=0)
+        # Label 1
+        l1 = Label(f1,text="  Shedule Meeting",bg='purple',fg='lightyellow',font=('verdana',22,'bold'))
+        l1.place(x=35,y=20)
+        
+        # Frame 2
+        f2 = Frame(reg,width=400,height=300,bg='purple')
+        f2.place(x=20,y=80)
+
+        l2 = Label(f2,text="Meeting Id:",fg='lightyellow',bg='purple', font=('roboto',13,'bold'))
+        l2.grid(row = 1, column = 0, pady = 10,padx=10) 
+
+        l3 = Label(f2,text="Title:",fg='lightyellow',bg='purple', font=('roboto',13,'bold'))
+        l3.grid(row = 2, column = 0, pady = 10,padx=10)
+
+        l4 = Label(f2,text="Teacher Id:",fg='lightyellow',bg='purple', font=('roboto',13,'bold'))
+        l4.grid(row = 3, column = 0, pady = 10,padx=10) 
+
+        l5 = Label(f2,text="Course:",fg='lightyellow',bg='purple', font=('roboto',13,'bold'))
+        l5.grid(row = 4, column = 0, pady = 10,padx=10) 
+        
+        l6 = Label(f2,text="Date:",fg='lightyellow',bg='purple', font=('roboto',13,'bold'))
+        l6.grid(row = 5, column = 0, pady = 10,padx=10) 
+
+        l7 = Label(f2,text="Start time:",fg='lightyellow',bg='purple', font=('roboto',13,'bold'))
+        l7.grid(row = 6, column = 0, pady = 10,padx=10) 
+        
+        l8 = Label(f2,text="Duration:",fg='lightyellow',bg='purple', font=('roboto',13,'bold'))
+        l8.grid(row = 7, column = 0, pady = 10,padx=10) 
+    
+        # Entry 1 - Email
+        e1 = Entry(f2,font=('roboto',12,'normal'))
+        e1.grid(row = 1, column = 1, pady = 10) 
+
+        e2 = Entry(f2,font=('roboto',12,'normal'))
+        e2.grid(row = 2, column = 1, pady = 10) 
+
+        e3 = Entry(f2,font=('roboto',12,'normal'))
+        e3.grid(row = 3, column = 1, pady = 10) 
+
+        e4 = Entry(f2,font=('roboto',12,'normal'))
+        e4.grid(row = 4, column = 1, pady = 10) 
+
+        e5 = Entry(f2,font=('roboto',12,'normal'))
+        e5.grid(row = 5, column = 1, pady = 10) 
+
+        e6 = Entry(f2,font=('roboto',12,'normal'))
+        e6.grid(row = 6, column = 1, pady = 10) 
+
+        e7 = Entry(f2,font=('roboto',12,'normal'))
+        e7.grid(row = 7, column = 1, pady = 10) 
+
+        # Submit button
+        sub = Button(f2,text="Submit",bg='orange',command=reg_submit,font=('roboto',12,'bold'))
+        sub.grid(column=1,row=8,pady="3")
+
+        reg.mainloop()
+
     def upload(self,h):
         u=Toplevel(h)
         u.geometry("300x200+940+445")
@@ -104,6 +189,8 @@ class teacher():
                                                                 "*.*")))
             if filename is not None:
                 messagebox.showinfo("Upload", "Upload Successful")
+                pres=Teacher.uploadAttendance(e1.get(),filename)
+                print(pres)
                 u.destroy()
             else:
                 messagebox.showerror("Error", "PLease choose a file.")
@@ -119,11 +206,14 @@ class teacher():
         f2 = Frame(u,width=400,height=300,bg='purple')
         f2.place(x=0,y=80)
 
-        l2 = Label(f2,text="",fg='lightyellow',bg='purple', font=('roboto',10,'bold'))
+        l2 = Label(f2,text="Meeting ID",fg='lightyellow',bg='purple', font=('roboto',12,'bold'))
         l2.grid(row = 1, column = 0, pady = 10,padx=10) 
 
+        e1= Entry(f2,font=('roboto',12,'normal'))
+        e1.grid(row = 1, column = 1, pady = 10) 
+
         sub = Button(f2,text="Choose",bg='orange',command=browseFiles,font=('roboto',12,'bold'))
-        sub.grid(column=0,row=2,pady="3",padx=150)
+        sub.grid(column=1,row=2,pady="3",padx=40)
 
         u.mainloop()
     # Welcome frame
@@ -151,7 +241,7 @@ class teacher():
         view.menu.add_command(label="Overall Attendance")
         view.place(x=2,y=300)
         # Registration button
-        sm = Button(f1,text="Shedule Meeting",bg='orange',relief='flat',underline=0,font=('roboto',15,'bold'))
+        sm = Button(f1,text="Shedule Meeting",bg='orange',relief='flat',underline=0,command=lambda:self.sm(name),font=('roboto',15,'bold'))
         sm.place(x=2,y=340)
         # Registration button
         sm = Button(f1,text="Upload Attendance",bg='orange',relief='flat',underline=0,command=lambda:self.upload(h),font=('roboto',15,'bold'))
