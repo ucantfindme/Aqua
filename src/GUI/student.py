@@ -22,6 +22,7 @@ class student():
         h.destroy()
         student().home()
         pass
+<<<<<<< HEAD
     def attendance(self):
         u=Toplevel()
         u.geometry("300x200+940+445")
@@ -61,6 +62,9 @@ class student():
 
         u.mainloop()
 
+=======
+    #profile func
+>>>>>>> 9b5fddb4b800f4f06a947c76aabbf365cca32946
     def profile(self,name):
         reg=Tk()
         reg.geometry("300x420+940+315")
@@ -137,7 +141,7 @@ class student():
         # Login button
         att = Button(f1,text="Attendance",bg='orange',relief='flat',underline=0,font=('roboto',15,'bold'))
         att.place(x=45,y=340)
-
+        #view button
         view = Menubutton(f1,text="View",bg='orange',relief='flat',underline=0,font=('roboto',15,'bold'))
         view.menu =  Menu ( view, tearoff = 0, bg='lightblue' ,font=('roboto',13,'normal'))
         view["menu"] =  view.menu

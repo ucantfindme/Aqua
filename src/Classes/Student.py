@@ -27,7 +27,14 @@ class Student(Person.Person):
         return co.getStudentAttendance(self.id)
     
     def viewRegisteredCourses(self):
-        pass
+        path=os.path.abspath('.')+"/src/DB"
+        conn = sqlite3.connect(path+'/person.db')
+        cursor = conn.cursor()
+        lst=cursor.execute('''SELECT * FROM COURSE WHERE CLASS_ENROLLED=?''',(self.batch))
+        ret=[list(i) for i in lst]
+        conn.commit()
+        conn.close()
+        return ret
     
     def viewProfile(self):
         return [self.id,self.usertype,self.name,self.dob,self.ph,self.email,self.batch]

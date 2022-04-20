@@ -23,7 +23,7 @@ class teacher():
         h.destroy()
         self.home()
         pass
-    
+    #profile func
     def profile(self,name):
         reg=Tk()
         reg.geometry("300x42+940+315")
@@ -87,7 +87,7 @@ class teacher():
         l18.grid(row = 7, column = 1, pady = 10,padx=10) 
 
         reg.mainloop()
-
+    #Schedule meeting func
     def sm(self,name):
         reg=Tk()
         reg.geometry("300x450+940+300")
@@ -95,7 +95,7 @@ class teacher():
         reg.minsize(400,450)
         reg.title("Shedule")
         reg.configure(background='purple')
-
+        #submit function
         def reg_submit():
             meeting_id=e1.get()
             title=e2.get()
@@ -112,7 +112,7 @@ class teacher():
             else:
                 messagebox.showerror("Error", "PLease enter valid details")
 
-
+        #frame 1
         f1 = Frame(reg,width=400,height=100,bg='purple')
         f1.place(x=0,y=0)
         # Label 1
@@ -144,7 +144,7 @@ class teacher():
         l8 = Label(f2,text="Duration:",fg='lightyellow',bg='purple', font=('roboto',13,'bold'))
         l8.grid(row = 7, column = 0, pady = 10,padx=10) 
     
-        # Entry 1 - Email
+        # Entry Fields
         e1 = Entry(f2,font=('roboto',12,'normal'))
         e1.grid(row = 1, column = 1, pady = 10) 
 
@@ -171,7 +171,7 @@ class teacher():
         sub.grid(column=1,row=8,pady="3")
 
         reg.mainloop()
-
+    #uploading the attendance Func
     def upload(self,h):
         u=Toplevel(h)
         u.geometry("300x200+940+445")
@@ -195,7 +195,7 @@ class teacher():
             else:
                 messagebox.showerror("Error", "PLease choose a file.")
 
-        
+        #Frame 1
         f1 = Frame(u,width=400,height=100,bg='purple')
         f1.place(x=0,y=0)
         # Label 1
