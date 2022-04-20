@@ -17,6 +17,7 @@ class f():
     def __init__(self):
         pass
 
+    #update password
     def confirm(self,h):
         c=Tk()
         c.geometry("300x350+940+350")
@@ -24,6 +25,7 @@ class f():
         c.minsize(400,350)
         c.title("Update")
         c.configure(background='purple')
+        #submit function
         def c_submit(c,h):
             name=e1.get()
             newpass=e2.get()
@@ -78,7 +80,7 @@ class f():
         fp.minsize(400,350)
         fp.title("Forgot Password")
         fp.configure(background='purple')
-        
+        #submit function
         def fp_submit(fp,h):
             name=e1.get()
             pin=e2.get()
