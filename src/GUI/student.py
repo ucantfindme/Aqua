@@ -22,7 +22,6 @@ class student():
         h.destroy()
         student().home()
         pass
-<<<<<<< HEAD
     def attendance(self):
         u=Toplevel()
         u.geometry("300x200+940+445")
@@ -62,9 +61,7 @@ class student():
 
         u.mainloop()
 
-=======
     #profile func
->>>>>>> 9b5fddb4b800f4f06a947c76aabbf365cca32946
     def profile(self,name):
         reg=Tk()
         reg.geometry("300x420+940+315")
