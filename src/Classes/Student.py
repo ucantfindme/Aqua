@@ -16,7 +16,7 @@ class Student(Person.Person):
         path=os.path.abspath('.')+"/src/DB"
         conn = sqlite3.connect(path+'/person.db')
         cursor = conn.cursor()
-        CourseId,Title,Prerequisites,ClassEnrolled,FacultyAssigned,LectureAll=0,0,0,0,0,0
+        CourseId,Title,Prerequisites,ClassEnrolled,FacultyAssigned,LectureAll='0','0','0','0','0','0'
         lst=cursor.execute('''SELECT * FROM COURSE WHERE COURSEID=?''',[course])
         for i in lst:
             CourseId,Title,Prerequisites,ClassEnrolled,FacultyAssigned,LectureAll=i
