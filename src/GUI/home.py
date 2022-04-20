@@ -41,10 +41,7 @@ class welcome():
         hom.place(x=85,y=40)
         # Login button
         log = Button(f1,text="Login",bg='orange',relief='flat',underline=0,command=lambda:l().login(h),font=('roboto',15,'bold'))
-        log.place(x=85,y=340)
-        # Registration button
-        reg = Button(f1,text="Register",bg='orange',relief='flat',underline=0,font=('roboto',15,'bold'))
-        reg.place(x=85,y=380)
+        log.place(x=85,y=460)
         #close button
         cls = Button(f1,text="Close",bg='orange',relief='flat',underline=0,command=lambda:h.destroy(),font=('roboto',15,'bold'))
         cls.place(x=85,y=500)
