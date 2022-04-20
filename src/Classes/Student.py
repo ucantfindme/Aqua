@@ -16,10 +16,11 @@ class Student(Person.Person):
         path=os.path.abspath('.')+"/src/DB"
         conn = sqlite3.connect(path+'/person.db')
         cursor = conn.cursor()
-        lst=cursor.execute('''SELECT * FROM COURSE WHERE COURSEID=?''',(course))
+        CourseId,Title,Prerequisites,ClassEnrolled,FacultyAssigned,LectureAll=0,0,0,0,0,0
+        lst=cursor.execute('''SELECT * FROM COURSE WHERE COURSEID=?''',[course])
         for i in lst:
             CourseId,Title,Prerequisites,ClassEnrolled,FacultyAssigned,LectureAll=i
-        lst=cursor.execute('''SELECT * FROM CLASS WHERE CLASSID=?''',(ClassEnrolled))
+        lst=cursor.execute('''SELECT * FROM CLASS WHERE CLASSID=?''',[ClassEnrolled])
         for i in lst:
             ClassId,Advisor,Students,CourseEnrolled=i
         conn.close()
@@ -30,7 +31,7 @@ class Student(Person.Person):
         path=os.path.abspath('.')+"/src/DB"
         conn = sqlite3.connect(path+'/person.db')
         cursor = conn.cursor()
-        lst=cursor.execute('''SELECT * FROM COURSE WHERE CLASS_ENROLLED=?''',(self.batch))
+        lst=cursor.execute('''SELECT * FROM COURSE WHERE CLASS_ENROLLED=?''',[self.batch])
         ret=[list(i) for i in lst]
         conn.commit()
         conn.close()

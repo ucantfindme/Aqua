@@ -2,6 +2,7 @@
 import sys
 import os
 from tkinter import *
+from tkinter import ttk
 from PIL import ImageTk, Image
 import tkinter as tk
 from tkinter.scrolledtext import ScrolledText
@@ -119,6 +120,56 @@ class student():
         l17.grid(row = 6, column = 1, pady = 10,padx=15) 
 
         reg.mainloop()
+    
+    def viewRegisteredCourses(self):
+        u=Toplevel()
+        u.geometry("300x200+940+445")
+        u.maxsize(400,480)
+        u.minsize(400,200)
+        u.title("View")
+        u.configure(background='purple')
+        ret=Student().viewRegisteredCourses()
+        print(ret)
+        treev = ttk.Treeview(u, selectmode ='browse')
+        
+        # Calling pack method w.r.to treeview
+        treev.pack(side ='left')
+        
+        # Constructing vertical scrollbar
+        # with treeview
+        verscrlbar = ttk.Scrollbar(u, orient ="vertical", command = treev.yview)
+        
+        # Calling pack method w.r.to vertical
+        # scrollbar
+        verscrlbar.pack(side ='left', fill ='x')
+        
+        # Configuring treeview
+        treev.configure(xscrollcommand = verscrlbar.set)
+        
+        # Defining number of columns
+        treev["columns"] = ("1", "2", "3", "4")
+        
+        # Defining heading
+        treev['show'] = 'headings'
+        
+        # Assigning the width and anchor to  the
+        # respective columns
+        treev.column("1", width = 90, anchor ='c')
+        treev.column("2", width = 90, anchor ='sw')
+        treev.column("3", width = 100, anchor ='sw')
+        treev.column("4", width = 100, anchor ='sw')
+        
+        # Assigning the heading names to the
+        # respective columns
+        treev.heading("1", text ="Course Id")
+        treev.heading("2", text ="Title")
+        treev.heading("3", text ="Batch")
+        treev.heading("4", text ="Faculty")
+        
+        # Inserting the items and their features to the columns built
+        for i in ret:
+            treev.insert("", 'end', text ="L1",values =(i[0],i[1],i[3],i[4]))
+        u.mainloop()
     # Welcome frame
     def home(self,name):
         # Home window
@@ -136,13 +187,13 @@ class student():
         pro = Button(f1,text="Profile",bg='orange',relief='flat',underline=0,command=lambda:self.profile(name),font=('roboto',15,'bold'))
         pro.place(x=45,y=40)
         # Login button
-        att = Button(f1,text="Attendance",bg='orange',relief='flat',underline=0,font=('roboto',15,'bold'))
+        att = Button(f1,text="Attendance",bg='orange',relief='flat',underline=0,command=self.attendance,font=('roboto',15,'bold'))
         att.place(x=45,y=340)
         #view button
         view = Menubutton(f1,text="View",bg='orange',relief='flat',underline=0,font=('roboto',15,'bold'))
         view.menu =  Menu ( view, tearoff = 0, bg='lightblue' ,font=('roboto',13,'normal'))
         view["menu"] =  view.menu
-        view.menu.add_command(label="Courses Registered")
+        view.menu.add_command(label="Courses Registered",command=self.viewRegisteredCourses)
         view.menu.add_command(label="Calender")
         view.place(x=45,y=380)
         #close button

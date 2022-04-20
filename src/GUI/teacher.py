@@ -227,7 +227,7 @@ class teacher():
 
         def u_submit():
             userid = e1.get()
-            ret=Teacher().viewScheduleMeetings(userid)
+            ret=Teacher().viewScheduleMeetings()
             print(ret)
             if ret is not None:
 

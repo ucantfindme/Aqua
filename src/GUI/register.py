@@ -14,7 +14,7 @@ class r():
         pass
     #Student Register function
     def sregister(self):
-        reg=Tk()
+        reg=Toplevel()
         reg.geometry("300x480+940+285")
         reg.maxsize(400,480)
         reg.minsize(400,480)
@@ -97,7 +97,7 @@ class r():
         reg.mainloop()
     #Teacher registration function
     def tregister(self):
-        reg=Tk()
+        reg=Toplevel()
         reg.geometry("300x500+940+270")
         reg.maxsize(400,500)
         reg.minsize(400,500)
@@ -187,7 +187,7 @@ class r():
         reg.mainloop()
     #course registration function
     def courseregister(self):
-        reg=Tk()
+        reg=Toplevel()
         reg.geometry("300x390+940+350")
         reg.maxsize(400,390)
         reg.minsize(400,390)
@@ -257,7 +257,7 @@ class r():
         reg.mainloop()
     #class registration
     def classregister(self):
-        reg=Tk()
+        reg=Toplevel()
         reg.geometry("300x350+940+350")
         reg.maxsize(400,350)
         reg.minsize(400,350)

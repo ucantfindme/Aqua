@@ -44,7 +44,7 @@ class Teacher(Person.Person):
         path=os.path.abspath('.')+"/src/DB"
         conn = sqlite3.connect(path+'/person.db')
         cursor = conn.cursor()
-        cursor.execute('''UPDATE MEETING SET ATT_REPORT=? WHERE MEETINGID=?''',(str(pres),meetingid))
+        cursor.execute('''UPDATE MEETING SET ATT_REPORT=? WHERE MEETINGID=?''',[str(pres),meetingid])
         conn.commit()
         for i in pres:
             #print(i)
@@ -60,7 +60,7 @@ class Teacher(Person.Person):
         path=os.path.abspath('.')+"/src/DB"
         conn = sqlite3.connect(path+'/person.db')
         cursor = conn.cursor()
-        lst=cursor.execute('''SELECT * FROM MEETING WHERE COND_BY=? and ATT_REPORT="set()" ''',(self.userid))
+        lst=cursor.execute('''SELECT * FROM MEETING WHERE COND_BY=? and ATT_REPORT="set()" ''',[self.userid])
         ret=[list(i) for i in lst]
         conn.commit()
         conn.close()
@@ -71,7 +71,7 @@ class Teacher(Person.Person):
         conn = sqlite3.connect(path+'/person.db')
         cursor = conn.cursor()
         print(meeting)
-        lst=cursor.execute('''SELECT ATT_REPORT FROM MEETING WHERE MEETINGID=?''',(meeting))
+        lst=cursor.execute('''SELECT ATT_REPORT FROM MEETING WHERE MEETINGID=?''',[meeting])
         ret=[list(i) for i in lst]
         conn.commit()
         conn.close()
@@ -82,10 +82,11 @@ class Teacher(Person.Person):
         path=os.path.abspath('.')+"/src/DB"
         conn = sqlite3.connect(path+'/person.db')
         cursor = conn.cursor()
-        lst=cursor.execute('''SELECT * FROM COURSE WHERE COURSEID=?''',(course))
+        CourseId,Title,Prerequisites,ClassEnrolled,FacultyAssigned,LectureAll=0,0,0,0,0,0
+        lst=cursor.execute('''SELECT * FROM COURSE WHERE COURSEID=?''',[course])
         for i in lst:
             CourseId,Title,Prerequisites,ClassEnrolled,FacultyAssigned,LectureAll=i
-        lst=cursor.execute('''SELECT * FROM CLASS WHERE CLASSID=?''',(ClassEnrolled))
+        lst=cursor.execute('''SELECT * FROM CLASS WHERE CLASSID=?''',[ClassEnrolled])
         for i in lst:
             ClassId,Advisor,Students,CourseEnrolled=i
         conn.close()
