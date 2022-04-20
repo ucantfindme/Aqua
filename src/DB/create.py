@@ -193,5 +193,19 @@ conn.commit()
 conn.close()
 
 #create Meeting table in person.db
+conn = sqlite3.connect(path+'/person.db')
+cursor = conn.cursor()
+cursor.execute('''CREATE TABLE MEETING (MEETINGID VARCHAR(15),TITLE VARCHAR(32),COND_BY VARCHAR(15),COURSE VARCHAR(15),DATE VARCHAR(15),START_TIME VARCHAR(15),DURATION INTEGER,ATT_REPORT VARCHAR(15))''')
+#Commit your changes in the database	
+conn.commit()
+#Closing the connection
+conn.close()
 
 #create Attendance table in person.db
+conn = sqlite3.connect(path+'/person.db')
+cursor = conn.cursor()
+cursor.execute('''CREATE TABLE ATTENDANCE (ATTENDANCEID INTEGER,STUDENTID VARCHAR(15),MEETINGID VARCHAR(15))''')
+#Commit your changes in the database	
+conn.commit()
+#Closing the connection
+conn.close()

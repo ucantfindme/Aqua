@@ -1,5 +1,5 @@
 #import Classes.Person
-from Classes import Person,Meeting,Course
+from Classes import Person,Meeting,Course,Attendance
 import os
 import sqlite3
 import csv
@@ -9,12 +9,12 @@ class Teacher(Person.Person):
         self.department=dept
         self.courses_taught=cou_tau
         
-    def scheduleMeeting(self,meeting_id,title,conducted_by,course,date,start_time,duration,attendance_report):
-        me=Meeting(meeting_id,title,conducted_by,course,date,start_time,duration,attendance_report)
+    def scheduleMeeting(self,meeting_id,title,conducted_by,course,date,start_time,duration):
+        me=Meeting.Meeting(meeting_id,title,conducted_by,course,date,start_time,duration)
         path=os.path.abspath('.')+"/src/DB"
         conn = sqlite3.connect(path+'/person.db')
         cursor = conn.cursor()
-        cursor.execute('''INSERT INTO MEETING VALUES (?,?,?,?)''',(meeting_id,title,conducted_by,course,date,start_time,duration))
+        cursor.execute('''INSERT INTO MEETING VALUES (?,?,?,?,?,?,?,"set()")''',(meeting_id,title,conducted_by,course,date,start_time,duration))
         # Display data inserted
         """print("Data Inserted in the table: ")
         data=cursor.execute('''SELECT * FROM PERSON''')
@@ -26,17 +26,34 @@ class Teacher(Person.Person):
         conn.close()
         return me
     
-    def uploadAttendance(self,meeting,pth=os.path.abspath('.')+"/src/SampleAttendanceReports/s1.csv"):
+    def uploadAttendance(meetingid,pth=os.path.abspath('.')+"/src/SampleAttendanceReports/s1.csv"):
+        #print(pth)
         eve=[]
-        with open(pth) as f:
-            reader=csv.reader(f,delimeter=" ")
+        with open(pth,"r",encoding="utf8", errors='ignore') as f:
+            reader=csv.reader(x.replace('\0',"") for x in f)
             for ev in reader:
-                eve.append(ev)
+                if ev:
+                    #print(ev[0].split('\t')[0])
+                    eve.append(ev[0].split('\t')[0])
         pres=set()
-        for i,*k in eve:
+        for i in eve[1:]:
             pres.add(i)
-        
-        
+        #print(len(pres))
+        path=os.path.abspath('.')+"/src/DB"
+        conn = sqlite3.connect(path+'/person.db')
+        cursor = conn.cursor()
+        cursor.execute('''UPDATE MEETING SET ATT_REPORT=? WHERE MEETINGID=?''',(str(pres),meetingid))
+        conn.commit()
+        for i in pres:
+            #print(i)
+            t=len(list(cursor.execute('''SELECT * FROM ATTENDANCE''')))
+            #at=Attendance.Attendance(t+1,i,meetingid,1,True)
+            cursor.execute('''INSERT INTO ATTENDANCE VALUES (?,?,?)''',(t+1,i,meetingid))
+        conn.commit()
+        #Closing the connection
+        conn.close()
+        return pres
+            
     def viewScheduleMeetings(self):
         pass
     def viewMeetingAttendance(self,meeting):
