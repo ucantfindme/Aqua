@@ -1,5 +1,5 @@
 #import Classes.Person
-from Classes import Person,Meeting,Course,Attendance
+from Classes import Person,Meeting,Course,Attendance,Class
 import os
 import sqlite3
 import csv
@@ -55,11 +55,43 @@ class Teacher(Person.Person):
         return pres
             
     def viewScheduleMeetings(self):
-        pass
+        path=os.path.abspath('.')+"/src/DB"
+        conn = sqlite3.connect(path+'/person.db')
+        cursor = conn.cursor()
+        lst=cursor.execute('''SELECT * FROM MEETING WHERE COND_BY=? and ATT_REPORT="set()" ''',(self.userid))
+        ret=[list(i) for i in lst]
+        conn.commit()
+        conn.close()
+        return ret
+    
     def viewMeetingAttendance(self,meeting):
-        pass
+        path=os.path.abspath('.')+"/src/DB"
+        conn = sqlite3.connect(path+'/person.db')
+        cursor = conn.cursor()
+        lst=cursor.execute('''SELECT ATT_REPORT FROM MEETING WHERE MEETINGID=?''',(meeting))
+        ret=[list(i) for i in lst]
+        conn.commit()
+        conn.close()
+        return ret[0]
+    
     def viewOverallAttendance(self,course):
-        pass
+        ret=[]
+        path=os.path.abspath('.')+"/src/DB"
+        conn = sqlite3.connect(path+'/person.db')
+        cursor = conn.cursor()
+        lst=cursor.execute('''SELECT * FROM COURSE WHERE COURSEID=?''',(course))
+        for i in lst:
+            CourseId,Title,Prerequisites,ClassEnrolled,FacultyAssigned,LectureAll=i
+        lst=cursor.execute('''SELECT * FROM CLASS WHERE CLASSID=?''',(ClassEnrolled))
+        for i in lst:
+            ClassId,Advisor,Students,CourseEnrolled=i
+        conn.close()
+        co=Course.Course(CourseId,Title,Prerequisites,ClassEnrolled,FacultyAssigned,LectureAll)
+        d=dict()
+        for i in Students:
+            d[i]=co.getStudentAttendance(i)
+        return d.items()
+    
     def viewProfile(self):
         pass
     
