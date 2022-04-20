@@ -1,6 +1,8 @@
 import Classes.Person
 import Classes.Course
 from Classes import Person,Course
+import os
+import sqlite3
 class Student(Person.Person):
     def __init__(self,userid,name,dob,ph,email,type,batch):
         super().__init__(userid,name,dob,ph,email,type)
