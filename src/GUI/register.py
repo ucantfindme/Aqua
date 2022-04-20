@@ -12,7 +12,7 @@ from Classes.Admin import Admin
 class r():
     def __init__(self):
         pass
-    # Register function
+    #Student Register function
     def sregister(self):
         reg=Tk()
         reg.geometry("300x480+940+285")
@@ -20,7 +20,7 @@ class r():
         reg.minsize(400,480)
         reg.title("Register")
         reg.configure(background='purple')
-
+        #submit function
         def reg_submit():
             studentid=e1.get()
             name=e2.get()
@@ -37,7 +37,7 @@ class r():
             else:
                 messagebox.showerror("Error", "PLease enter valid details")
 
-
+        #Frame 1
         f1 = Frame(reg,width=400,height=100,bg='purple')
         f1.place(x=0,y=0)
         # Label 1
@@ -69,7 +69,7 @@ class r():
         l8 = Label(f2,text="Password:",fg='lightyellow',bg='purple', font=('roboto',13,'bold'))
         l8.grid(row = 7, column = 0, pady = 10,padx=15)
     
-        # Entry 1 - Email
+        # Entry Fields
         e1 = Entry(f2,font=('roboto',12,'normal'))
         e1.grid(row = 1, column = 1, pady = 10) 
 
@@ -95,7 +95,7 @@ class r():
         sub.grid(column=1,row=8,pady="3")
 
         reg.mainloop()
-    
+    #Teacher registration function
     def tregister(self):
         reg=Tk()
         reg.geometry("300x500+940+270")
@@ -103,7 +103,7 @@ class r():
         reg.minsize(400,500)
         reg.title("Register")
         reg.configure(background='purple')
-
+        #submit function
         def reg_submit():
             teacherid=e1.get()
             name=e2.get()
@@ -156,7 +156,7 @@ class r():
         l9 = Label(f2,text="Password:",fg='lightyellow',bg='purple', font=('roboto',13,'bold'))
         l9.grid(row = 8, column = 0, pady = 10,padx=10)
     
-        # Entry 1 - Email
+        # Entry fields
         e1 = Entry(f2,font=('roboto',12,'normal'))
         e1.grid(row = 1, column = 1, pady = 10) 
 
@@ -185,7 +185,7 @@ class r():
         sub.grid(column=1,row=9,pady="3")
 
         reg.mainloop()
-    
+    #course registration function
     def courseregister(self):
         reg=Tk()
         reg.geometry("300x390+940+350")
@@ -193,7 +193,7 @@ class r():
         reg.minsize(400,390)
         reg.title("Register")
         reg.configure(background='purple')
-
+        #submit function
         def reg_submit():
             courseid=e1.get()
             title=e2.get()
@@ -234,7 +234,7 @@ class r():
         l6 = Label(f2,text="Faculty Assigned:",fg='lightyellow',bg='purple', font=('roboto',13,'bold'))
         l6.grid(row = 5, column = 0, pady = 10,padx=10) 
 
-        # Entry 1 - Email
+        # Entry fields
         e1 = Entry(f2,font=('roboto',12,'normal'))
         e1.grid(row = 1, column = 1, pady = 10) 
 
@@ -255,7 +255,7 @@ class r():
         sub.grid(column=1,row=6,pady="3")
 
         reg.mainloop()
-    
+    #class registration
     def classregister(self):
         reg=Tk()
         reg.geometry("300x350+940+350")
@@ -263,7 +263,7 @@ class r():
         reg.minsize(400,350)
         reg.title("Register")
         reg.configure(background='purple')
-
+        #submit function
         def reg_submit():
             classid=e1.get()
             advisor=e2.get()
@@ -300,7 +300,7 @@ class r():
         l5 = Label(f2,text="Courses Enrolled:",fg='lightyellow',bg='purple', font=('roboto',13,'bold'))
         l5.grid(row = 4, column = 0, pady = 10,padx=10) 
     
-        # Entry 1 - Email
+        # Entry fields
         e1 = Entry(f2,font=('roboto',12,'normal'))
         e1.grid(row = 1, column = 1, pady = 10) 
 
