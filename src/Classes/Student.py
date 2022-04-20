@@ -4,7 +4,7 @@ from Classes import Person,Course
 import os
 import sqlite3
 class Student(Person.Person):
-    def __init__(self,userid,name,dob,ph,email,type,batch):
+    def __init__(self,userid="Varun36",name="Varun",dob="3-6-2001",ph="56666",email="varun@gamil.com",type="S",batch="CSED"):
         super().__init__(userid,name,dob,ph,email,type)
         self.batch=batch
         

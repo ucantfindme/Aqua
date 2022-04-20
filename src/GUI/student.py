@@ -9,6 +9,7 @@ from tkinter import messagebox
 import random
 from datetime import datetime
 from tkinter import filedialog
+from Classes.Student import Student
 from Classes.Welcome import login as logfun, forgotPassword as forpass, logout as lgo
 #from home import welcome
 
@@ -21,7 +22,45 @@ class student():
         h.destroy()
         student().home()
         pass
-    
+    def attendance(self):
+        u=Toplevel()
+        u.geometry("300x200+940+445")
+        u.maxsize(400,480)
+        u.minsize(400,200)
+        u.title("View")
+        u.configure(background='purple')
+
+        def u_submit():
+            id = e1.get()
+            ret=Student().getAttendance(id)
+            print(ret)
+            if ret is not None:
+                u.destroy()
+            else:
+                messagebox.showerror("Error", "Please enter valid details.")
+
+        
+        f1 = Frame(u,width=400,height=100,bg='purple')
+        f1.place(x=0,y=0)
+        # Label 1
+        l1 = Label(f1,text="  View Attendance",bg='purple',fg='lightyellow',font=('verdana',22,'bold'))
+        l1.place(x=35,y=20)
+        
+        # Frame 2
+        f2 = Frame(u,width=400,height=300,bg='purple')
+        f2.place(x=0,y=80)
+
+        l2 = Label(f2,text="Course ID",fg='lightyellow',bg='purple', font=('roboto',12,'bold'))
+        l2.grid(row = 1, column = 0, pady = 10,padx=10) 
+
+        e1= Entry(f2,font=('roboto',12,'normal'))
+        e1.grid(row = 1, column = 1, pady = 10) 
+
+        sub = Button(f2,text="Submit",bg='orange',command=u_submit,font=('roboto',12,'bold'))
+        sub.grid(column=1,row=2,pady="3",padx=40)
+
+        u.mainloop()
+
     def profile(self,name):
         reg=Tk()
         reg.geometry("300x420+940+315")
@@ -58,24 +97,24 @@ class student():
         l7 = Label(f2,text="Batch:",fg='lightyellow',bg='purple', font=('roboto',13,'bold'))
         l7.grid(row = 6, column = 0, pady = 10,padx=15) 
 
+        ret=Student().viewProfile()
+        
+        l12 = Label(f2,text=ret[0],fg='lightyellow',bg='purple', font=('roboto',13,'bold'))
+        l12.grid(row = 1, column = 1, pady = 10,padx=10) 
 
-    
-        l12 = Label(f2,text="Student Id:",fg='lightyellow',bg='purple', font=('roboto',13,'bold'))
-        l12.grid(row = 1, column = 1, pady = 10,padx=15) 
+        l13 = Label(f2,text=ret[2],fg='lightyellow',bg='purple', font=('roboto',13,'bold'))
+        l13.grid(row = 2, column = 1, pady = 10,padx=10)
 
-        l13 = Label(f2,text="Name:",fg='lightyellow',bg='purple', font=('roboto',13,'bold'))
-        l13.grid(row = 2, column = 1, pady = 10,padx=15)
+        l14 = Label(f2,text=ret[3],fg='lightyellow',bg='purple', font=('roboto',13,'bold'))
+        l14.grid(row = 3, column = 1, pady = 10,padx=10) 
 
-        l14 = Label(f2,text="DOB:",fg='lightyellow',bg='purple', font=('roboto',13,'bold'))
-        l14.grid(row = 3, column = 1, pady = 10,padx=15) 
+        l15 = Label(f2,text=ret[4],fg='lightyellow',bg='purple', font=('roboto',13,'bold'))
+        l15.grid(row = 4, column = 1, pady = 10,padx=10) 
 
-        l15 = Label(f2,text="Phone no:",fg='lightyellow',bg='purple', font=('roboto',13,'bold'))
-        l15.grid(row = 4, column = 1, pady = 10,padx=15) 
+        l16 = Label(f2,text=ret[5],fg='lightyellow',bg='purple', font=('roboto',13,'bold'))
+        l16.grid(row = 5, column = 1, pady = 10,padx=10)  
 
-        l16 = Label(f2,text="E-Mail:",fg='lightyellow',bg='purple', font=('roboto',13,'bold'))
-        l16.grid(row = 5, column = 1, pady = 10,padx=15) 
-
-        l17 = Label(f2,text="Batch:",fg='lightyellow',bg='purple', font=('roboto',13,'bold'))
+        l17 = Label(f2,text=ret[6],fg='lightyellow',bg='purple', font=('roboto',13,'bold'))
         l17.grid(row = 6, column = 1, pady = 10,padx=15) 
 
         reg.mainloop()
