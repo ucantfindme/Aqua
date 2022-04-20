@@ -1,8 +1,10 @@
 #import Classes.Person
+
 from Classes import Person,Meeting,Course,Attendance,Class
 import os
 import sqlite3
 import csv
+
 class Teacher(Person.Person):
     def __init__(self,userid,name,dob,ph,email,type,dept,cou_tau):
         super().__init__(userid,name,dob,ph,email,type)
@@ -93,5 +95,5 @@ class Teacher(Person.Person):
         return d.items()
     
     def viewProfile(self):
-        pass
+        return [self.id,self.usertype,self.name,self.dob,self.ph,self.email,self.department,self.courses_taught]
     
