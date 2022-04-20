@@ -35,7 +35,7 @@ class r():
                 messagebox.showinfo("Register", "Registration Successful")
                 reg.destroy()
             else:
-                messagebox.showerror("Error", "PLease enter valid details")
+                messagebox.showerror("Error", "Please enter valid details")
 
         #Frame 1
         f1 = Frame(reg,width=400,height=100,bg='purple')
