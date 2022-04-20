@@ -95,12 +95,41 @@ class Admin(Person.Person):
         return cou
     
     def viewStudentRegistrations(self):
-        pass
+        path=os.path.abspath('.')+"/src/DB"
+        conn = sqlite3.connect(path+'/person.db')
+        cursor = conn.cursor()
+        lst=cursor.execute('''SELECT * FROM STUDENT''')
+        ret=[list(i) for i in lst]
+        conn.commit()
+        conn.close()
+        return ret
+        
     def viewTeacherRegistrations(self):
-        pass
-    def viewCourseRegistrations(self):
-        pass
-    def viewClassRegistrations(self):
-        pass
+        path=os.path.abspath('.')+"/src/DB"
+        conn = sqlite3.connect(path+'/person.db')
+        cursor = conn.cursor()
+        lst=cursor.execute('''SELECT * FROM TEACHER''')
+        ret=[list(i) for i in lst]
+        conn.commit()
+        conn.close()
+        return ret
     
-
+    def viewCourseRegistrations(self):
+        path=os.path.abspath('.')+"/src/DB"
+        conn = sqlite3.connect(path+'/person.db')
+        cursor = conn.cursor()
+        lst=cursor.execute('''SELECT * FROM COURSE''')
+        ret=[list(i) for i in lst]
+        conn.commit()
+        conn.close()
+        return ret
+        
+    def viewClassRegistrations(self):
+        path=os.path.abspath('.')+"/src/DB"
+        conn = sqlite3.connect(path+'/person.db')
+        cursor = conn.cursor()
+        lst=cursor.execute('''SELECT * FROM CLASS''')
+        ret=[list(i) for i in lst]
+        conn.commit()
+        conn.close()
+        return ret
