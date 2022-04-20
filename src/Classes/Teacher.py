@@ -6,7 +6,7 @@ import sqlite3
 import csv
 
 class Teacher(Person.Person):
-    def __init__(self,userid,name,dob,ph,email,type,dept,cou_tau):
+    def __init__(self,userid="KKumar",name="KrishnaKumar",dob="7-6-1990",ph="33256",email="krishna3@gmail.com",type='T',dept="CSE",cou_tau="OS,SE"):
         super().__init__(userid,name,dob,ph,email,type)
         self.department=dept
         self.courses_taught=cou_tau
@@ -70,6 +70,7 @@ class Teacher(Person.Person):
         path=os.path.abspath('.')+"/src/DB"
         conn = sqlite3.connect(path+'/person.db')
         cursor = conn.cursor()
+        print(meeting)
         lst=cursor.execute('''SELECT ATT_REPORT FROM MEETING WHERE MEETINGID=?''',(meeting))
         ret=[list(i) for i in lst]
         conn.commit()

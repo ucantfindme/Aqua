@@ -63,27 +63,27 @@ class teacher():
         l8 = Label(f2,text="Courses Taught:",fg='lightyellow',bg='purple', font=('roboto',13,'bold'))
         l8.grid(row = 7, column = 0, pady = 10,padx=10) 
 
-    
+        ret=Teacher().viewProfile()
         
-        l12 = Label(f2,text="Teacher Id:",fg='lightyellow',bg='purple', font=('roboto',13,'bold'))
+        l12 = Label(f2,text=ret[0],fg='lightyellow',bg='purple', font=('roboto',13,'bold'))
         l12.grid(row = 1, column = 1, pady = 10,padx=10) 
 
-        l13 = Label(f2,text="Name:",fg='lightyellow',bg='purple', font=('roboto',13,'bold'))
+        l13 = Label(f2,text=ret[2],fg='lightyellow',bg='purple', font=('roboto',13,'bold'))
         l13.grid(row = 2, column = 1, pady = 10,padx=10)
 
-        l14 = Label(f2,text="DOB:",fg='lightyellow',bg='purple', font=('roboto',13,'bold'))
+        l14 = Label(f2,text=ret[3],fg='lightyellow',bg='purple', font=('roboto',13,'bold'))
         l14.grid(row = 3, column = 1, pady = 10,padx=10) 
 
-        l15 = Label(f2,text="Phone no:",fg='lightyellow',bg='purple', font=('roboto',13,'bold'))
+        l15 = Label(f2,text=ret[4],fg='lightyellow',bg='purple', font=('roboto',13,'bold'))
         l15.grid(row = 4, column = 1, pady = 10,padx=10) 
 
-        l16 = Label(f2,text="E-Mail:",fg='lightyellow',bg='purple', font=('roboto',13,'bold'))
+        l16 = Label(f2,text=ret[5],fg='lightyellow',bg='purple', font=('roboto',13,'bold'))
         l16.grid(row = 5, column = 1, pady = 10,padx=10) 
 
-        l17 = Label(f2,text="Department:",fg='lightyellow',bg='purple', font=('roboto',13,'bold'))
+        l17 = Label(f2,text=ret[6],fg='lightyellow',bg='purple', font=('roboto',13,'bold'))
         l17.grid(row = 6, column = 1, pady = 10,padx=10) 
 
-        l18 = Label(f2,text="Courses Taught:",fg='lightyellow',bg='purple', font=('roboto',13,'bold'))
+        l18 = Label(f2,text=ret[7],fg='lightyellow',bg='purple', font=('roboto',13,'bold'))
         l18.grid(row = 7, column = 1, pady = 10,padx=10) 
 
         reg.mainloop()
@@ -104,7 +104,7 @@ class teacher():
             date=e5.get()
             start_time=e6.get()
             duration=e7.get()
-            s=Teacher.scheduleMeeting(self,meeting_id,title,conducted_by,course,date,start_time,duration)
+            s=Teacher().scheduleMeeting(self,meeting_id,title,conducted_by,course,date,start_time,duration)
             print(s)
             if s:
                 messagebox.showinfo("Register", "Registration Successful")
@@ -189,7 +189,7 @@ class teacher():
                                                                 "*.*")))
             if filename is not None:
                 messagebox.showinfo("Upload", "Upload Successful")
-                pres=Teacher.uploadAttendance(e1.get(),filename)
+                pres=Teacher().uploadAttendance(e1.get(),filename)
                 print(pres)
                 u.destroy()
             else:
@@ -216,6 +216,127 @@ class teacher():
         sub.grid(column=1,row=2,pady="3",padx=40)
 
         u.mainloop()
+    
+    def viewSheduledMeetings(self):
+        u=Toplevel()
+        u.geometry("300x200+940+445")
+        u.maxsize(400,480)
+        u.minsize(400,200)
+        u.title("View")
+        u.configure(background='purple')
+
+        def u_submit():
+            userid = e1.get()
+            ret=Teacher().viewScheduleMeetings(userid)
+            print(ret)
+            if ret is not None:
+
+                u.destroy()
+            else:
+                messagebox.showerror("Error", "Please enter valid details.")
+
+        
+        f1 = Frame(u,width=400,height=100,bg='purple')
+        f1.place(x=0,y=0)
+        # Label 1
+        l1 = Label(f1,text="   View Meetings",bg='purple',fg='lightyellow',font=('verdana',22,'bold'))
+        l1.place(x=35,y=20)
+        
+        # Frame 2
+        f2 = Frame(u,width=400,height=300,bg='purple')
+        f2.place(x=0,y=80)
+
+        l2 = Label(f2,text="Teacher ID",fg='lightyellow',bg='purple', font=('roboto',12,'bold'))
+        l2.grid(row = 1, column = 0, pady = 10,padx=10) 
+
+        e1= Entry(f2,font=('roboto',12,'normal'))
+        e1.grid(row = 1, column = 1, pady = 10) 
+
+        sub = Button(f2,text="Submit",bg='orange',command=u_submit,font=('roboto',12,'bold'))
+        sub.grid(column=1,row=2,pady="3",padx=40)
+
+        u.mainloop()
+
+    def viewMeetingAttendance(self):
+        u=Toplevel()
+        u.geometry("300x200+940+445")
+        u.maxsize(400,480)
+        u.minsize(400,200)
+        u.title("View")
+        u.configure(background='purple')
+
+        def u_submit():
+            userid = e1.get()
+            ret=Teacher().viewMeetingAttendance(userid)
+            print(ret)
+            if ret is not None:
+
+                u.destroy()
+            else:
+                messagebox.showerror("Error", "Please enter valid details.")
+
+        
+        f1 = Frame(u,width=400,height=100,bg='purple')
+        f1.place(x=0,y=0)
+        # Label 1
+        l1 = Label(f1,text="  View Attendance",bg='purple',fg='lightyellow',font=('verdana',22,'bold'))
+        l1.place(x=35,y=20)
+        
+        # Frame 2
+        f2 = Frame(u,width=400,height=300,bg='purple')
+        f2.place(x=0,y=80)
+
+        l2 = Label(f2,text="Meeting ID",fg='lightyellow',bg='purple', font=('roboto',12,'bold'))
+        l2.grid(row = 1, column = 0, pady = 10,padx=10) 
+
+        e1= Entry(f2,font=('roboto',12,'normal'))
+        e1.grid(row = 1, column = 1, pady = 10) 
+
+        sub = Button(f2,text="Submit",bg='orange',command=u_submit,font=('roboto',12,'bold'))
+        sub.grid(column=1,row=2,pady="3",padx=40)
+
+        u.mainloop()
+
+    def viewOverallAttendance(self):
+        u=Toplevel()
+        u.geometry("300x200+940+445")
+        u.maxsize(400,480)
+        u.minsize(400,200)
+        u.title("View")
+        u.configure(background='purple')
+
+        def u_submit():
+            id = e1.get()
+            ret=Teacher().viewOverallAttendance(id)
+            print(ret)
+            if ret is not None:
+
+                u.destroy()
+            else:
+                messagebox.showerror("Error", "Please enter valid details.")
+
+        
+        f1 = Frame(u,width=400,height=100,bg='purple')
+        f1.place(x=0,y=0)
+        # Label 1
+        l1 = Label(f1,text="  View Attendance",bg='purple',fg='lightyellow',font=('verdana',22,'bold'))
+        l1.place(x=35,y=20)
+        
+        # Frame 2
+        f2 = Frame(u,width=400,height=300,bg='purple')
+        f2.place(x=0,y=80)
+
+        l2 = Label(f2,text="Course ID",fg='lightyellow',bg='purple', font=('roboto',12,'bold'))
+        l2.grid(row = 1, column = 0, pady = 10,padx=10) 
+
+        e1= Entry(f2,font=('roboto',12,'normal'))
+        e1.grid(row = 1, column = 1, pady = 10) 
+
+        sub = Button(f2,text="Submit",bg='orange',command=u_submit,font=('roboto',12,'bold'))
+        sub.grid(column=1,row=2,pady="3",padx=40)
+
+        u.mainloop()
+    
     # Welcome frame
     def home(self,name):
         # Home window
@@ -236,9 +357,9 @@ class teacher():
         view = Menubutton(f1,text="View",bg='orange',relief='flat',underline=0,font=('roboto',15,'bold'))
         view.menu =  Menu ( view, tearoff = 0, bg='lightblue' ,font=('roboto',13,'normal'))
         view["menu"] =  view.menu
-        view.menu.add_command(label="Sheduled Meetings")
-        view.menu.add_command(label="Meeting Attendance")
-        view.menu.add_command(label="Overall Attendance")
+        view.menu.add_command(label="Sheduled Meetings",command=self.viewSheduledMeetings)
+        view.menu.add_command(label="Meeting Attendance",command=self.viewMeetingAttendance)
+        view.menu.add_command(label="Overall Attendance",command=self.viewOverallAttendance)
         view.place(x=2,y=300)
         # Registration button
         sm = Button(f1,text="Shedule Meeting",bg='orange',relief='flat',underline=0,command=lambda:self.sm(name),font=('roboto',15,'bold'))
